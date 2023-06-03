@@ -1,100 +1,202 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
-    <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-            <div class="flex">
-                <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
-                    </a>
+<!DOCTYPE html>
+<html lang="en">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <title>{{ env('APP_NAME') }}</title>
+
+    <!-- Google font file. If you want you can change. -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,900" rel="stylesheet">
+
+    <!-- Fontawesome font file css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.min.css') }}">
+
+    <!-- Animate css file for css3 animations. for more : https://daneden.github.io/animate.css') }} -->
+    <!-- Only use animate action. If you dont use animation, you don't have to add.-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/cryptocoins.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/plugins/c3-chart/c3.css') }}">
+
+    <!-- Template global css file. Requared all pages -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/global.style.css') }}">
+
+    <!-- Swiper slider css file -->
+    <link rel="stylesheet" href="{{ asset('assets/css/swiper.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/jqcandlestick.css') }}">
+
+    <!--turbo slider plugin css file -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/plugins/turbo-slider/turbo.css') }}">
+    <!-- Facebook Pixel Code -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            '{{ asset('assets/js/fbevents.js') }}');
+        fbq('init', '692589158011169');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=692589158011169&amp;ev=PageView&amp;noscript=1" /></noscript>
+    <!-- End Facebook Pixel Code -->
+</head>
+
+<body>
+
+
+    <div class="wrapper ">
+        <div class="nav-menu">
+            <nav class="menu">
+
+                <!-- Menu navigation start -->
+                <div class="nav-container">
+                    <ul class="main-menu">
+                        <li class="active">
+                            <a href="index.html"><img src="{{ asset('assets/img/content/icons/1.png') }}"
+                                    alt=""><strong class="special">Dashboard</strong> </a>
+                        </li>
+                        <li class="">
+                            <a href="wallet.html"><img src="{{ asset('assets/img/content/icons/2.png') }}"
+                                    alt=""><strong class="special">My Walet</strong> </a>
+                        </li>
+                        <li class="">
+                            <a href="trading.html"><img src="{{ asset('assets/img/content/icons/3.png') }}"
+                                    alt=""><strong class="special">Crypto Trade</strong> </a>
+                        </li>
+                        <li class="">
+                            <a href="buy-sell.html"><img src="{{ asset('assets/img/content/icons/6.png') }}"
+                                    alt=""><strong class="special">Buy & sell</strong> </a>
+                        </li>
+                        <li class="">
+                            <a href="profile.html"><img src="{{ asset('assets/img/content/icons/5.png') }}"
+                                    alt=""><strong class="special">Trader Profile</strong> </a>
+                        </li>
+                        <li class="">
+                            <a href="affiliate.html"><img src="{{ asset('assets/img/content/icons/4.png') }}"
+                                    alt=""><strong class="special">Affiliate System</strong> </a>
+                        </li>
+                        <li class="">
+                            <a href="setting.html"><img src="{{ asset('assets/img/content/icons/11.png') }}"
+                                    alt=""><strong class="special">Settings</strong> </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><img src="{{ asset('assets/img/content/icons/9.png') }}"
+                                    alt=""><strong class="special">Login/Register</strong> <span
+                                    class="fa fa-angle-down"></span></a>
+                            <ul>
+                                <li><a href="login.html" data-loader="show">Login</a></li>
+                                <li><a href="signup.html" data-loader="show">Register</a></li>
+                                <li><a href="forgot-password.html" data-loader="show">Forgot Password</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0);"><img src="{{ asset('assets/img/content/icons/8.png') }}"
+                                    alt=""> <strong class="special">Wizards</strong> <span
+                                    class="fa fa-angle-down"></span></a>
+                            <ul>
+                                <li><a href="wizard-default.html" data-loader="show">Wizard Default</a></li>
+                                <li><a href="wizard-fullscreen.html" data-loader="show">Wizard Fullscreen</a></li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="charts.html"><img src="{{ asset('assets/img/content/icons/14.png') }}"
+                                    alt=""><strong class="special">Charts</strong> </a>
+                        </li>
+                        <li>
+                            <a href="forms.html" data-loader="show"><img
+                                    src="{{ asset('assets/img/content/icons/7.png') }}" alt=""><strong
+                                    class="special">Form Elements</strong></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{{ asset('assets/img/content/icons/10.png') }}"
+                                    alt=""><strong class="special"> Components</strong> <span
+                                    class="fa fa-angle-down"></span></a>
+                            <ul>
+                                <li><a href="tab-bottom.html" data-loader="show">Tab (Bottom)</a></li>
+                                <li><a href="tab-top.html" data-loader="show">Tab (Top)</a></li>
+                                <li><a href="accordion.html" data-loader="show">Accordion</a></li>
+                                <li><a href="popup.html" data-loader="show">Popup Modal</a></li>
+                                <li><a href="checkbox-list.html" data-loader="show">Check List</a></li>
+                                <li><a href="link-list.html" data-loader="show">Link List</a></li>
+                                <li><a href="link-list-two-column.html" data-loader="show">Two Column Links</a></li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="#"><img src="{{ asset('assets/img/content/icons/15.png') }}"
+                                    alt=""><strong class="special"> Pages</strong> <span
+                                    class="fa fa-angle-down"></span></a>
+                            <ul>
+                                <li class=""><a href="profile.html" data-loader="show">User Profile</a></li>
+                                <li><a href="search-result.html" data-loader="show">Search Results</a></li>
+                                <li><a href="contact.html" data-loader="show">Contact</a></li>
+                                <li><a href="blank.html" data-loader="show">Blank Page</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Menu navigation end -->
+            </nav>
+        </div>
+
+        <div class="wrapper-inline">
+            <!-- Header area start -->
+            <header class="no-background">
+
+
+                <div class="navi-menu-button">
+                    <em></em>
+                    <em></em>
+                    <em></em>
                 </div>
 
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
-                </div>
+            </header>
+
+            <div class="bottom-menu-section">
+                <ul class="bottom-menu list-unstyled list-inline">
+                    <li>
+                        <a href="index.html">
+                            <img src="{{ asset('assets/img/content/l1.png') }}" alt="">
+                            <p>Home</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="wallet.html">
+                            <img src="{{ asset('assets/img/content/l2.png') }}" alt="">
+                            <p>Wallet</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="b-m-pluse" href="#"><i class="fa fa-plus"></i></a>
+                    </li>
+                    <li>
+                        <a href="setting.html">
+                            <img src="{{ asset('assets/img/content/l3.png') }}" alt="">
+                            <p>Cards</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.html">
+                            <img src="{{ asset('assets/img/content/l4.png') }}" alt="">
+                            <p>Profile</p>
+                        </a>
+                    </li>
+                </ul>
             </div>
-
-            <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
-                <x-dropdown align="right" width="48">
-                    <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                            <div>{{ Auth::user()->name }}</div>
-
-                            <div class="ml-1">
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                        </button>
-                    </x-slot>
-
-                    <x-slot name="content">
-                        <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
-                        </x-dropdown-link>
-
-                        <!-- Authentication -->
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-
-                            <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                {{ __('Log Out') }}
-                            </x-dropdown-link>
-                        </form>
-                    </x-slot>
-                </x-dropdown>
-            </div>
-
-            <!-- Hamburger -->
-            <div class="-mr-2 flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
-                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link>
-        </div>
-
-        <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200">
-            <div class="px-4">
-                <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
-            </div>
-
-            <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
-                </x-responsive-nav-link>
-
-                <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-
-                    <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                        {{ __('Log Out') }}
-                    </x-responsive-nav-link>
-                </form>
-            </div>
-        </div>
-    </div>
-</nav>
