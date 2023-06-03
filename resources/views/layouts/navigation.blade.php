@@ -180,22 +180,25 @@
                     <li>
                         <a href="wallet.html">
                             <img src="{{ asset('assets/img/content/l2.png') }}" alt="">
-                            <p>Wallet</p>
+                            <p>Mission</p>
                         </a>
                     </li>
                     <li>
-                        <a class="b-m-pluse" href="#"><i class="fa fa-plus"></i></a>
+                        <a href="wallet.html">
+                            <img src="{{ asset('assets/img/content/l2.png') }}" alt="">
+                            <p>Vip</p>
+                        </a>
                     </li>
                     <li>
                         <a href="setting.html">
                             <img src="{{ asset('assets/img/content/l3.png') }}" alt="">
-                            <p>Cards</p>
+                            <p>Team</p>
                         </a>
                     </li>
                     <li>
                         <a href="profile.html">
                             <img src="{{ asset('assets/img/content/l4.png') }}" alt="">
-                            <p>Profile</p>
+                            <p>Mine</p>
                         </a>
                     </li>
                 </ul>
