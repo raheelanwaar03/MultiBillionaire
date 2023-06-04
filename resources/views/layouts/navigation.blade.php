@@ -172,33 +172,43 @@
             <div class="bottom-menu-section">
                 <ul class="bottom-menu list-unstyled list-inline">
                     <li>
-                        <a href="index.html">
-                            <img src="{{ asset('assets/img/content/l1.png') }}" alt="">
-                            <p>Home</p>
+                        <a href="#">
+                            <div class="text-center p-2">
+                                <i class="fa fa-home" aria-hidden="true" style="font-size:30px;color:#FFDB08"></i>
+                                <p>Home</p>
+                            </div>
                         </a>
                     </li>
                     <li>
                         <a href="wallet.html">
-                            <img src="{{ asset('assets/img/content/l2.png') }}" alt="">
-                            <p>Mission</p>
+                            <div class="text-center p-2">
+                                <i class="fa fa-podcast" aria-hidden="true" style="font-size:30px;color:#FFDB08"></i>
+                                <p>Mission</p>
+                            </div>
                         </a>
                     </li>
                     <li>
                         <a href="wallet.html">
-                            <img src="{{ asset('assets/img/content/l2.png') }}" alt="">
-                            <p>Vip</p>
+                            <div class="text-center p-2">
+                                <i class="fa fa-star" aria-hidden="true" style="font-size:30px;color:#FFDB08"></i>
+                                <p>Vip</p>
+                            </div>
                         </a>
                     </li>
                     <li>
                         <a href="setting.html">
-                            <img src="{{ asset('assets/img/content/l3.png') }}" alt="">
-                            <p>Team</p>
+                            <div class="text-center p-2">
+                                <i class="fa fa-users" aria-hidden="true" style="font-size:30px;color:#FFDB08"></i>
+                                <p>Team</p>
+                            </div>
                         </a>
                     </li>
                     <li>
                         <a href="profile.html">
-                            <img src="{{ asset('assets/img/content/l4.png') }}" alt="">
-                            <p>Mine</p>
+                            <div class="text-center p-2">
+                                <i class="fa fa-user-o" aria-hidden="true" style="font-size:30px;color:#FFDB08"></i>
+                                <p>Mine</p>
+                            </div>
                         </a>
                     </li>
                 </ul>

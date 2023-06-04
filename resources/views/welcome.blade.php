@@ -28,7 +28,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="text-center">
-                                        <i class="fa-solid fa-money-bill-transfer" style="font-size:25px;"></i>
+                                        <i class="fa fa-money" aria-hidden="true" style="font-size:35px;color:#FFDB08;"></i>
                                     </div>
                                     <h5 class="text-decoration-none text-center">Widthraw</h5>
                                 </div>
@@ -40,9 +40,9 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="text-center">
-                                        <i class="fa-solid fa-money-bill-transfer" style="font-size:25px;"></i>
+                                        <i class="fa fa-line-chart" style="font-size:35px;color:#FFDB08;"></i>
                                     </div>
-                                    <h5 class="text-decoration-none text-center">Widthraw</h5>
+                                    <h5 class="text-decoration-none text-center">Finance Records</h5>
                                 </div>
                             </div>
                         </a>
@@ -52,9 +52,9 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="text-center">
-                                        <i class="fa-solid fa-money-bill-transfer" style="font-size:25px;"></i>
+                                        <i class="fa fa-building-o" style="font-size:35px;color:#FFDB08;"></i>
                                     </div>
-                                    <h5 class="text-decoration-none text-center">Widthraw</h5>
+                                    <h5 class="text-decoration-none text-center">Investment record</h5>
                                 </div>
                             </div>
                         </a>
@@ -66,9 +66,9 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="text-center">
-                                        <i class="fa-solid fa-money-bill-transfer" style="font-size:25px;"></i>
+                                        <i class="fa fa-credit-card" style="font-size:35px;color:#FFDB08;"></i>
                                     </div>
-                                    <h5 class="text-decoration-none text-center">Widthraw</h5>
+                                    <h5 class="text-decoration-none text-center">Transfer</h5>
                                 </div>
                             </div>
                         </a>
@@ -78,9 +78,9 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="text-center">
-                                        <i class="fa-solid fa-money-bill-transfer" style="font-size:25px;"></i>
+                                        <i class="fa fa-columns" style="font-size:35px;color:#FFDB08;"></i>
                                     </div>
-                                    <h5 class="text-decoration-none text-center">Widthraw</h5>
+                                    <h5 class="text-decoration-none text-center">Amount</h5>
                                 </div>
                             </div>
                         </a>
@@ -90,9 +90,35 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="text-center">
-                                        <i class="fa-solid fa-money-bill-transfer" style="font-size:25px;"></i>
+                                        <i class="fa fa-unlock" style="font-size:35px;color:#FFDB08;"></i>
                                     </div>
-                                    <h5 class="text-decoration-none text-center">Widthraw</h5>
+                                    <h5 class="text-decoration-none text-center">Modify Login password</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-12 d-flex justify-content-center align-items-center mt-3">
+                    <div class="col-sm-4">
+                        <a href="#" class="text-decoration-none">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        <i class="fa fa-id-card" style="font-size:35px;color:#FFDB08;"></i>
+                                    </div>
+                                    <h5 class="text-decoration-none text-center">Modify Security password</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                     <div class="col-sm-4">
+                        <a href="#" class="text-decoration-none">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        <i class="fa fa-user-o" style="font-size:35px;color:#FFDB08;"></i>
+                                    </div>
+                                    <h5 class="text-decoration-none text-center">Logout</h5>
                                 </div>
                             </div>
                         </a>
