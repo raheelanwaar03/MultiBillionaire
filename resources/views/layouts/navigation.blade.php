@@ -101,9 +101,8 @@
                                     alt=""><strong class="special">Login/Register</strong> <span
                                     class="fa fa-angle-down"></span></a>
                             <ul>
-                                <li><a href="login.html" data-loader="show">Login</a></li>
-                                <li><a href="signup.html" data-loader="show">Register</a></li>
-                                <li><a href="forgot-password.html" data-loader="show">Forgot Password</a></li>
+                                <li><a href="{{ route('login') }}" data-loader="show">Login</a></li>
+                                <li><a href="{{ route('register') }}" data-loader="show">Register</a></li>
                             </ul>
                         </li>
 
