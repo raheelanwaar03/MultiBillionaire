@@ -111,14 +111,27 @@
                             </div>
                         </a>
                     </div>
-                     <div class="col-sm-4">
+                    <div class="col-sm-4">
                         <a href="#" class="text-decoration-none">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="text-center">
                                         <i class="fa fa-user-o" style="font-size:35px;color:#FFDB08;"></i>
                                     </div>
-                                    <h5 class="text-decoration-none text-center">Logout</h5>
+
+                                    @if (auth()->user())
+                                        <form action="{{ route('logout') }}" method="POST">
+                                            @csrf
+                                            <div class="text-center mt-3">
+                                                <button type="submit" class="btn btn-warning text-white">Logout</button>
+                                            </div>
+                                        </form>
+                                    @else
+                                        <a href="{{ route('login') }}">
+                                            <h5 class="text-decoration-none text-center">Login</h5>
+                                        </a>
+                                    @endif
+
                                 </div>
                             </div>
                         </a>
