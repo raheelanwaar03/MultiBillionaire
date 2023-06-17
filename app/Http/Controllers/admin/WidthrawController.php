@@ -32,4 +32,25 @@ class WidthrawController extends Controller
         return view('admin.widthraw.rejected',compact('widthraws'));
     }
 
+    public function makePending($id)
+    {
+        $widthraw = WidthrawBalance::find($id);
+        $widthraw->status = 'pending';
+        $widthraw->save();
+    }
+
+    public function makeApprove($id)
+    {
+        $widthraw = WidthrawBalance::find($id);
+        $widthraw->status = 'approved';
+        $widthraw->save();
+    }
+
+    public function makeRejected($id)
+    {
+        $widthraw = WidthrawBalance::find($id);
+        $widthraw->status = 'rejected';
+        $widthraw->save();
+    }
+
 }

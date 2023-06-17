@@ -16,6 +16,8 @@ Route::name('Admin.')->prefix('Admin')->middleware('admin','auth')->group(functi
     Route::get('/Pending/Widthraw',[WidthrawController::class,'pending'])->name('Pending.Widthraw');
     Route::get('/Approved/Widthraw',[WidthrawController::class,'approved'])->name('Approved.Widthraw');
     Route::get('/Rejected/Widthraw',[WidthrawController::class,'rejected'])->name('Rejected.Widthraw');
-
+    Route::get('/Make/Pending/{id}',[WidthrawController::class,'makePending'])->name('Make.Pending');
+    Route::get('/Make/Approve/{id}',[WidthrawController::class,'makeApprove'])->name('Make.Approve');
+    Route::get('/Make/Rejected/{id}',[WidthrawController::class,'makeRejected'])->name('Make.Rejected');
 
 });

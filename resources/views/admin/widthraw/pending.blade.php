@@ -21,17 +21,24 @@
                                             <th>Wallet Address</th>
                                             <th>Status</th>
                                             <th>Date</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($widthraws as $widthraw)
-                                        <tr>
-                                            <td>{{ $widthraw->name }}</td>
-                                            <td>{{ $widthraw->amount }}</td>
-                                            <td>{{ $widthraw->wallet }}</td>
-                                            <td>{{ $widthraw->status }}</td>
-                                            <td>{{ $widthraw->created_at }}</td>
-                                        </tr>
+                                            <tr>
+                                                <td>{{ $widthraw->name }}</td>
+                                                <td>{{ $widthraw->amount }}</td>
+                                                <td>{{ $widthraw->wallet }}</td>
+                                                <td>{{ $widthraw->status }}</td>
+                                                <td>{{ $widthraw->created_at }}</td>
+                                                <td>
+                                                    <a href="{{ route('Admin.Make.Approve') }}"
+                                                        class="btn btn-success">Approve</a>
+                                                    <a href="{{ route('Admin.Make.Reject') }}"
+                                                        class="btn btn-danger">Rejectd</a>
+                                                </td>
+                                            </tr>
                                         @endforeach
                                     </tbody>
                                     <tfoot>
@@ -41,6 +48,7 @@
                                             <th>Wallet Address</th>
                                             <th>Status</th>
                                             <th>Date</th>
+                                            <th>Action</th>
                                         </tr>
                                     </tfoot>
                                 </table>

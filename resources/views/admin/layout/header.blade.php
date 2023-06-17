@@ -126,9 +126,9 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('Admin.All.Widthraw') }}">All</a></li>
-                            <li><a href="#">Pending</a></li>
-                            <li><a href="#">Approved</a></li>
-                            <li><a href="#">Rejected</a></li>
+                            <li><a href="{{ route('Admin.Pending.Widthraw') }}">Pending</a></li>
+                            <li><a href="{{ route('Admin.Approved.Widthraw') }}">Approved</a></li>
+                            <li><a href="{{ route('Admin.Rejected.Widthraw') }}">Rejected</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
