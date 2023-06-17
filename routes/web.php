@@ -2,11 +2,22 @@
 
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserDashboardController;
 use Illuminate\Support\Facades\Route;
 
 
 
 Route::get('/',[LandingPageController::class,'index'])->name('LandingPage');
+
+
+// User Routes
+
+Route::name('User.')->prefix('User')->middleware('user','auth')->group(function(){
+
+    Route::get('/Widthraw',[UserDashboardController::class,'widthraw'])->name('Widthraw.Page');
+    Route::post('/Widthraw/Request',[UserDashboardController::class,'widthrawRequest'])->name('Widthraw.Request');
+
+});
 
 
 
@@ -20,5 +31,4 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
-require __DIR__.'/user.php';
 require __DIR__.'/admin.php';

@@ -8,7 +8,7 @@
             <div class="d-flex align-items-center mt-30">
                 <div class="d-flex flex-grow">
                     <div class="mr-auto">
-                        <h1 class="b-val"> $23 </h1>
+                        <h1 class="b-val"> ${{ auth()->user()->balance }} </h1>
                         <p class="g-text mb-0">Total Balance</p>
                     </div>
                     <div class="ml-auto align-self-end">
@@ -24,7 +24,7 @@
             <div class="container">
                 <div class="col-sm-12 d-flex justify-content-center align-items-center mb-3">
                     <div class="col-sm-4">
-                        <a href="#" class="text-decoration-none">
+                        <a href="{{ route('User.Widthraw.Page')  }}" class="text-decoration-none">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="text-center">
@@ -131,7 +131,6 @@
                                             <h5 class="text-decoration-none text-center">Login</h5>
                                         </a>
                                     @endif
-
                                 </div>
                             </div>
                         </a>
