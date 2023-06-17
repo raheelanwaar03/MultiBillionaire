@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string('user_id');
             $table->string('name');
             $table->string('amount');
-            $table->string('password');
+            $table->string('widthraw_password');
             $table->string('wallet');
+            $table->string('status');
             $table->timestamps();
         });
     }

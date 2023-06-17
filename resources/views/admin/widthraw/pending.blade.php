@@ -9,7 +9,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">All Widthraws</h4>
+                            <h4 class="card-title">Pending Widthraws</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -40,7 +40,7 @@
                                             <th>Amount</th>
                                             <th>Wallet Address</th>
                                             <th>Status</th>
-                                            <th>Dated</th>
+                                            <th>Date</th>
                                         </tr>
                                     </tfoot>
                                 </table>

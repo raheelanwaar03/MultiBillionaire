@@ -14,7 +14,22 @@ class WidthrawController extends Controller
         return view('admin.widthraw.index',compact('widthraws'));
     }
 
+    public function pending()
+    {
+        $widthraws = WidthrawBalance::where('status','pending')->get();
+        return view('admin.widthraw.pending',compact('widthraws'));
+    }
 
+    public function approved()
+    {
+        $widthraws = WidthrawBalance::where('status','approved')->get();
+        return view('admin.widthraw.approved',compact('widthraws'));
+    }
 
+    public function rejected()
+    {
+        $widthraws = WidthrawBalance::where('status','rejected')->get();
+        return view('admin.widthraw.rejected',compact('widthraws'));
+    }
 
 }
