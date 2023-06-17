@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('widthraw_balances', function (Blueprint $table) {
             $table->id();
             $table->string('user_id');
+            $table->string('name');
             $table->string('amount');
             $table->string('password');
             $table->string('wallet');

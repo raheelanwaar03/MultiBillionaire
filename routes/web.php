@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\user\WidthrawBalanceController;
 use App\Http\Controllers\UserDashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,8 +15,8 @@ Route::get('/',[LandingPageController::class,'index'])->name('LandingPage');
 
 Route::name('User.')->prefix('User')->middleware('user','auth')->group(function(){
 
-    Route::get('/Widthraw',[UserDashboardController::class,'widthraw'])->name('Widthraw.Page');
-    Route::post('/Widthraw/Request',[UserDashboardController::class,'widthrawRequest'])->name('Widthraw.Request');
+    Route::get('/Widthraw',[WidthrawBalanceController::class,'widthraw'])->name('Widthraw.Page');
+    Route::post('/Widthraw/Request',[WidthrawBalanceController::class,'widthrawRequest'])->name('Widthraw.Request');
 
 });
 

@@ -79,6 +79,7 @@ class clean extends Command
         $user->name = 'Admin';
         $user->referal = 'default';
         $user->balance = '0';
+        $user->widthraw_password = '12345';
         $user->email = 'admin@gmail.com';
         $user->password = Hash::make('asdfasdf');
         $user->status = 'approved';
@@ -90,7 +91,8 @@ class clean extends Command
         $user->name = 'User';
         $user->email = 'user@gmail.com';
         $user->referal = 'default';
-        $user->balance = '0';
+        $user->widthraw_password = '12345';
+        $user->balance = '50';
         $user->password = Hash::make('asdfasdf');
         $user->role = 'user';
         $user->status = 'approved';

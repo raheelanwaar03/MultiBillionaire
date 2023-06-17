@@ -8,8 +8,14 @@
             <div class="d-flex align-items-center mt-30">
                 <div class="d-flex flex-grow">
                     <div class="mr-auto">
+                        @if (auth()->user())
                         <h1 class="b-val"> ${{ auth()->user()->balance }} </h1>
                         <p class="g-text mb-0">Total Balance</p>
+                        @else
+                        <h1 class="b-val"> $0.0 </h1>
+                        <p class="g-text mb-0">Total Balance</p>
+                        @endif
+
                     </div>
                     <div class="ml-auto align-self-end">
                         <a href="#" class="profile-av"><img
