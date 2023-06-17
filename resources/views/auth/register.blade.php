@@ -24,7 +24,7 @@
                             </div>
                             <div class="form-row no-padding">
                                 <i class="fa fa-envelope"></i>
-                                <input type="number" name="widthraw_password" class="form-element" placeholder="Enter Your 5 Digits Securet Pin" max="5">
+                                <input type="number" name="pin" class="form-element" placeholder="Enter Your 5 Digits Securet Pin" max="5">
                             </div>
                             <div class="form-row no-padding">
                                 <i class="fa fa-lock"></i>

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('balance')->default('0');
-            $table->integer('widthraw_password');
+            $table->integer('pin');
             $table->string('level')->default('level 0');
             $table->string('referal')->default('default');
             $table->string('status')->default('pending');

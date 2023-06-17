@@ -22,7 +22,7 @@ class User extends Authenticatable
         'level',
         'balance',
         'balance',
-        'widthraw_password',
+        'pin',
         'status',
         'role',
         'email',
