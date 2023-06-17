@@ -113,12 +113,11 @@
                             <span class="nav-text">Users</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="content.html">All Users</a></li>
-                            <li><a href="menu.html">Pending Users</a></li>
-                            <li><a href="email-template.html">Approved Users</a></li>
-                            <li><a href="blog.html">Rejected Users</a></li>
+                            <li><a href="{{ route('Admin.All.Users') }}">All Users</a></li>
+                            <li><a href="{{ route('Admin.Pending.Users') }}">Pending Users</a></li>
+                            <li><a href="{{ route('Admin.Approved.Users') }}">Approved Users</a></li>
+                            <li><a href="{{ route('Admin.Rejected.Users') }}">Rejected Users</a></li>
                         </ul>
-
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                             <i class="flaticon-072-printer"></i>

@@ -33,9 +33,9 @@
                                                 <td>{{ $widthraw->status }}</td>
                                                 <td>{{ $widthraw->created_at }}</td>
                                                 <td>
-                                                    <a href="{{ route('Admin.Make.Approve') }}"
+                                                    <a href="{{ route('Admin.Make.Approve', ['id' => $widthraw->id]) }}"
                                                         class="btn btn-success">Approve</a>
-                                                    <a href="{{ route('Admin.Make.Pending') }}"
+                                                    <a href="{{ route('Admin.Make.Pending', ['id' => $widthraw->id]) }}"
                                                         class="btn btn-warning">Pending</a>
                                                 </td>
                                             </tr>
