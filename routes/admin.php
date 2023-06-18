@@ -18,9 +18,9 @@ Route::name('Admin.')->prefix('Admin')->middleware('admin','auth')->group(functi
     Route::get('/Pending/Users',[AdminDashboardController::class,'pendingUsers'])->name('Pending.Users');
     Route::get('/Approved/Users',[AdminDashboardController::class,'approvedUsers'])->name('Approved.Users');
     Route::get('/Rejected/Users',[AdminDashboardController::class,'rejectedUsers'])->name('Rejected.Users');
-    Route::get('/Make/Pending/{id}',[AdminDashboardController::class,'makePending'])->name('Make.Users.Pending');
-    Route::get('/Make/Approved/{id}',[AdminDashboardController::class,'makeApproved'])->name('Make.Users.Approved');
-    Route::get('/Make/Rejected/{id}',[AdminDashboardController::class,'makeRejected'])->name('Make.Users.Rejected');
+    Route::get('/Make/User/Pending/{id}',[AdminDashboardController::class,'makePending'])->name('Make.User.Pending');
+    Route::get('/Make/User/pproved/{id}',[AdminDashboardController::class,'makeApproved'])->name('Make.User.Approved');
+    Route::get('/Make/User/Rejected/{id}',[AdminDashboardController::class,'makeRejected'])->name('Make.User.Rejected');
 
     // Widthraw Routes
     Route::get('/All/Widthraw',[WidthrawController::class,'index'])->name('All.Widthraw');
