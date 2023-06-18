@@ -17,25 +17,34 @@ class WidthrawBalanceController extends Controller
     public function widthrawRequest(Request $request)
     {
         $validated = $request->validate([
+            'name' => 'required',
             'amount' => 'required',
-            'password' => 'required',
             'wallet' => 'required',
+            'pin' => 'required',
         ]);
-
-        if ($validated['amount'] < 10) {
-            return redirect()->back()->with('error', 'You cannot request widthraw less than 10$');
-        }
-
         //  Checking user personal balance
 
         if ($validated['amount'] > auth()->user()->balance) {
             return redirect()->back()->with('error', 'You have not sufficient balance');
         }
+        // checking user balance null or not
+        if (auth()->user()->balance = null) {
+            return redirect()->back()->with('error', 'Your account is empty');
+        }
+
+        if ($validated['amount'] > 10) {
+            return redirect()->back()->with('error', 'You cannot request widthraw less than 10$');
+        }
 
         // Dedecting Widthrawal Fees and widthrawal amount from user personal balance
 
-        $fees = $validated['amount'] * 10 / 100;
         $user = User::where('id', auth()->user()->id)->first();
+        // checking user pin
+        $pin = $user->pin;
+        if($pin != $validated['pin']){
+            return redirect()->back()->with('error','Please Enter correct Pin');
+        }
+        $fees = $validated['amount'] * 10 / 100;
         $userBalance = $user->balance;
         $dedectionAmount = $fees + $validated['amount'];
         $user->balance = $userBalance - $dedectionAmount;
@@ -43,10 +52,10 @@ class WidthrawBalanceController extends Controller
 
         $widthraw  = new WidthrawBalance();
         $widthraw->user_id = auth()->user()->id;
+        $widthraw->name = $validated['name'];
         $widthraw->amount = $validated['amount'];
-        $widthraw->password = $validated['password'];
         $widthraw->wallet = $validated['wallet'];
         $widthraw->save();
-        return redirect()->back()->with('success', 'You successfully requsted for Widthraw you will recive widthraw in working 20hrs');
+        return redirect()->back()->with('success', 'You successfully requsted for Widthraw you will recive widthraw in working 20 hrs');
     }
 }

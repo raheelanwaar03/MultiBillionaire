@@ -31,6 +31,11 @@
                                 <form action="{{ route('User.Widthraw.Request') }}" method="POST">
                                     @csrf
                                     <div class="form-group">
+                                        <label for=""><b>Your Account Title</b></label>
+                                        <input type="text" name="name" class="form-control"
+                                            placeholder="Enter your account title" style="color: black">
+                                    </div>
+                                    <div class="form-group">
                                         <label for=""><b>Widthraw Amount</b></label>
                                         <input type="number" name="amount" class="form-control"
                                             placeholder="Enter amount you want to widthraw" style="color: black">
@@ -41,9 +46,10 @@
                                             placeholder="Enter your Wallet Address" style="color: black">
                                     </div>
                                     <div class="form-group">
-                                        <label for=""><b>Security Password</b></label>
-                                        <input type="number" name="password" class="form-control"
-                                            placeholder="Enter your secret password of 5 digits" style="color: black">
+                                        <label for=""><b>Security Pin</b></label>
+                                        <input type="number" name="pin" class="form-control"
+                                            placeholder="Enter your secret pin of 5 digits" style="color: black"
+                                            maxlength="5">
                                     </div>
                                     <div class="">
                                         <button class="btn btn-warning text-white btn-block">Request For Widthraw</button>

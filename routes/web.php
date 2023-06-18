@@ -17,6 +17,8 @@ Route::name('User.')->prefix('User')->middleware('user','auth')->group(function(
 
     Route::get('/Widthraw',[WidthrawBalanceController::class,'widthraw'])->name('Widthraw.Page');
     Route::post('/Widthraw/Request',[WidthrawBalanceController::class,'widthrawRequest'])->name('Widthraw.Request');
+    Route::get('/My/Profile',[UserDashboardController::class,'myProfile'])->name('My.Profile');
+    Route::get('/Finance/Records',[UserDashboardController::class,'myFinance'])->name('Finance.Records');
 
 });
 

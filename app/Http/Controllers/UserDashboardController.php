@@ -9,4 +9,15 @@ use Illuminate\Http\Request;
 class UserDashboardController extends Controller
 {
 
+    public function myProfile()
+    {
+        return view('LandingPage.user.profile');
+    }
+
+    public function myFinance()
+    {
+        $widthraws = WidthrawBalance::get();
+        return view('LandingPage.user.finance',compact('widthraws'));
+    }
+
 }

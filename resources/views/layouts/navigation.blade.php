@@ -63,18 +63,6 @@
 
     <div class="wrapper ">
         <div class="wrapper-inline">
-            <!-- Header area start -->
-            <header class="no-background">
-
-
-                <div class="navi-menu-button">
-                    <em></em>
-                    <em></em>
-                    <em></em>
-                </div>
-
-            </header>
-
             <div class="bottom-menu-section">
                 <ul class="bottom-menu list-unstyled list-inline">
                     <li>
@@ -110,7 +98,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="profile.html">
+                        <a href="{{ route('User.My.Profile') }}">
                             <div class="text-center p-2">
                                 <i class="fa fa-user-o" aria-hidden="true" style="font-size:30px;color:#FFDB08"></i>
                                 <p>Mine</p>
