@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\AdminDashboardController;
+use App\Http\Controllers\admin\TaskController;
 use App\Http\Controllers\admin\WidthrawController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,9 @@ Route::name('Admin.')->prefix('Admin')->middleware('admin','auth')->group(functi
     Route::get('/Make/Approve/{id}',[WidthrawController::class,'makeApprove'])->name('Make.Approve');
     Route::get('/Make/Rejected/{id}',[WidthrawController::class,'makeRejected'])->name('Make.Rejected');
 
+    // Add new Task
+    Route::get('/Add/New/Task',[TaskController::class,'index'])->name('Add.Task');
+    Route::post('/Enter/Task',[TaskController::class,'add'])->name('Enter.Task');
 
 
 });
