@@ -18,7 +18,7 @@ class RegisteredUserController extends Controller
     /**
      * Display the registration view.
      */
-    public function create(): View
+    public function create($referal = 'default')
     {
         return view('auth.register');
     }
@@ -34,7 +34,7 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'pin' => ['required','numeric','max:5'],
+            'pin' => ['required','numeric'],
         ]);
 
         $user = User::create([
@@ -42,6 +42,7 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'pin' => $request->pin,
+            'referal' => $request->referal,
         ]);
 
         event(new Registered($user));

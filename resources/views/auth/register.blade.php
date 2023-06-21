@@ -23,8 +23,8 @@
                                 <input type="email" name="email" class="form-element" placeholder="Your Working Email">
                             </div>
                             <div class="form-row no-padding">
-                                <i class="fa fa-envelope"></i>
-                                <input type="number" name="pin" class="form-element" placeholder="Enter Your 5 Digits Securet Pin" max="5">
+                                <i class="fa fa-lock"></i>
+                                <input type="number" name="pin" class="form-element" placeholder="Enter Your 5 Digits Securet Pin" maxlength="5">
                             </div>
                             <div class="form-row no-padding">
                                 <i class="fa fa-lock"></i>

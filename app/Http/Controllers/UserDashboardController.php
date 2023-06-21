@@ -20,4 +20,12 @@ class UserDashboardController extends Controller
         return view('LandingPage.user.finance',compact('widthraws'));
     }
 
+    public function myTeam()
+    {
+        $referals = User::where('referal',auth()->user()->email)->get();
+
+        return view('LandingPage.user.team',compact('referals'));
+    }
+
+
 }

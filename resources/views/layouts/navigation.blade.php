@@ -90,7 +90,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="setting.html">
+                        <a href="{{ route('User.My.Team') }}">
                             <div class="text-center p-2">
                                 <i class="fa fa-users" aria-hidden="true" style="font-size:30px;color:#FFDB08"></i>
                                 <p>Team</p>
