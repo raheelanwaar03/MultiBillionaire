@@ -27,5 +27,10 @@ class UserDashboardController extends Controller
         return view('LandingPage.user.team',compact('referals'));
     }
 
+    public function performTask()
+    {
+        return view('LandingPage.user.task');
+    }
+
 
 }

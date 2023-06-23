@@ -74,7 +74,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="wallet.html">
+                        <a href="{{ route('User.Perform.Task') }}">
                             <div class="text-center p-2">
                                 <i class="fa fa-podcast" aria-hidden="true" style="font-size:30px;color:#FFDB08"></i>
                                 <p>Mission</p>

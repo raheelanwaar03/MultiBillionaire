@@ -20,6 +20,7 @@ Route::name('User.')->prefix('User')->middleware('user','auth')->group(function(
     Route::get('/My/Profile',[UserDashboardController::class,'myProfile'])->name('My.Profile');
     Route::get('/Finance/Records',[UserDashboardController::class,'myFinance'])->name('Finance.Records');
     Route::get('/My/Team',[UserDashboardController::class,'myTeam'])->name('My.Team');
+    Route::get('/Perform/Task',[UserDashboardController::class,'performTask'])->name('Perform.Task');
 
 });
 
