@@ -33,5 +33,10 @@ class UserDashboardController extends Controller
         return view('LandingPage.user.task',compact('tasks'));
     }
 
+    public function levels()
+    {
+        return view('LandingPage.user.levels');
+    }
+
 
 }

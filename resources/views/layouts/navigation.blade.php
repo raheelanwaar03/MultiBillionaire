@@ -82,7 +82,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="wallet.html">
+                        <a href="{{ route('User.Vip.Levels') }}">
                             <div class="text-center p-2">
                                 <i class="fa fa-star" aria-hidden="true" style="font-size:30px;color:#FFDB08"></i>
                                 <p>Vip</p>
