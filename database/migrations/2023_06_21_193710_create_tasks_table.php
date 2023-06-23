@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('commission');
             $table->string('rate');
             $table->string('img');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

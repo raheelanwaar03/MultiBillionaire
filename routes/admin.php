@@ -35,6 +35,8 @@ Route::name('Admin.')->prefix('Admin')->middleware('admin','auth')->group(functi
     // Add new Task
     Route::get('/Add/New/Task',[TaskController::class,'index'])->name('Add.Task');
     Route::post('/Enter/Task',[TaskController::class,'add'])->name('Enter.Task');
+    Route::get('/All/Task',[TaskController::class,'allTask'])->name('All.Task');
+    Route::get('/Delete/Task/{id}',[TaskController::class,'delete'])->name('Delete.Task');
 
 
 });

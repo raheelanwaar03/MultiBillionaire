@@ -33,6 +33,24 @@ class TaskController extends Controller
         $task->commission = $validated['commission'];
         $task->rate = $validated['rate'];
         $task->img = $imageName;
-        return redirect()->back()->with('success','Task added successfully');
+        $task->save();
+        return redirect()->route('Admin.All.Task')->with('success','Task added successfully');
     }
+
+    public function allTask()
+    {
+        $tasks = task::get();
+        // return $tasks;
+        return view('admin.task.index',compact('tasks'));
+    }
+
+    public function delete($id)
+    {
+        $task = task::find($id);
+        $task->delete();
+        return redirect()->back()->with('success','Task Deleted successfully');
+    }
+
+
+
 }

@@ -19,6 +19,9 @@
 
 <!-- Dashboard 1 -->
 <script src="{{ asset('admin/js/dashboard/dashboard-1.js') }}"></script>
+{{-- Data Table --}}
+<script src="{{ asset('admin/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('admin/js/plugins-init/datatables.init.js') }}"></script>
 
 <script src="{{ asset('admin/js/custom.min.js') }}"></script>
 <script src="{{ asset('admin/js/dlabnav-init.js') }}"></script>

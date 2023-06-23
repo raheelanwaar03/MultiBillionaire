@@ -9,36 +9,33 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Pending Users</h4>
+                            <h4 class="card-title">All Task</h4>
+                            <a href="{{ route('Admin.Add.Task') }}" class="btn btn-primary">Add New</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table id="example" class="display" style="min-width: 845px">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Balance</th>
+                                            <th>Title</th>
+                                            <th>price</th>
+                                            <th>rate</th>
                                             <th>Status</th>
                                             <th>Date</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($users as $user)
+                                        @foreach ($tasks as $task)
                                             <tr>
-                                                <td>{{ $user->name }}</td>
-                                                <td>{{ $user->email }}</td>
-                                                <td>{{ $user->balance }}</td>
-                                                <td>{{ $user->status }}</td>
-                                                <td>{{ $user->created_at }}</td>
+                                                <td>{{ $task->title }}</td>
+                                                <td>{{ $task->price }}</td>
+                                                <td>{{ $task->rate }}</td>
+                                                <td>{{ $task->status }}</td>
+                                                <td>{{ $task->created_at }}</td>
                                                 <td>
-                                                    <a href="{{ route('Admin.Make.Approve', ['id' => $user->id]) }}"
-                                                        class="btn btn-success">Approve</a>
-                                                    <a href="{{ route('Admin.Make.Reject', ['id' => $user->id]) }}"
-                                                        class="btn btn-danger">Rejectd</a>
-                                                    <a href="{{ route('Admin.Make.Pending', ['id' => $user->id]) }}"
-                                                        class="btn btn-warning">Pending</a>
+                                                    <a href="{{ route('Admin.Delete.Task',['id'=>$task->id]) }}"
+                                                        class="btn btn-sm btn-danger">Delelte</a>
                                                 </td>
                                             </tr>
                                         @endforeach
