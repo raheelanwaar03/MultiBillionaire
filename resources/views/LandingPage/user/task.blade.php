@@ -12,29 +12,33 @@
         <section class="container">
             <div class="tab-item">
                 <div class="tab-menu fix-width">
-                    <a class="menu-item active" href="javascript:void(0);" data-content="pending" style="width: 50%;">Processing</a>
-                    <a class="menu-item" href="javascript:void(0);" data-content="completed" style="width: 50%;">Completed</a>
+                    <a class="menu-item active" href="javascript:void(0);" data-content="pending"
+                        style="width: 50%;">Processing</a>
+                    <a class="menu-item" href="javascript:void(0);" data-content="completed"
+                        style="width: 50%;">Completed</a>
                 </div>
                 <div class="tab-content">
                     <div class="content-item active" id="pending">
-                        <section class="mt-15 mb-15 container">
-                            <div class="coin-box">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="d-flex align-items-center">
-                                        <img class="img-xs" src="img/content/coin2.png" alt="coin image">
-                                        <div class="ml-10">
-                                            <h3 class="coin-name">Ethereum</h3>
-                                            <small class="text-muted">$55,532,854</small>
+                        @foreach ($tasks as $task)
+                            <section class="mt-15 mb-15 container">
+                                <div class="coin-box">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                            <img class="img-xs" src="{{ asset('images/' . $task->img) }}" alt="coin image">
+                                            <div class="ml-10">
+                                                <h3 class="coin-name">{{ $task->title }}</h3>
+                                                <small class="text-muted">${{ $task->price }}</small>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <small class="d-block mb-0 txt-green"><i
+                                                    class="txt-green fa fa-arrow-up mr-10 mb-5"></i>{{ $task->rate }}%</small>
+                                            <small class="text-muted d-block">{{ $task->created_at }}</small>
                                         </div>
                                     </div>
-                                    <div>
-                                        <small class="d-block mb-0 txt-green"><i
-                                                class="txt-green fa fa-arrow-up mr-10 mb-5"></i>$1,013</small>
-                                        <small class="text-muted d-block">increase 7.96%</small>
-                                    </div>
                                 </div>
-                            </div>
-                        </section>
+                            </section>
+                        @endforeach
                     </div>
                     <div class="content-item" id="completed">
                         <section class="mt-15 mb-15 container">

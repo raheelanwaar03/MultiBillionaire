@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\admin\task;
 use App\Models\User;
 use App\Models\user\WidthrawBalance;
 use Illuminate\Http\Request;
@@ -22,14 +23,14 @@ class UserDashboardController extends Controller
 
     public function myTeam()
     {
-        $referals = User::where('referal',auth()->user()->email)->get();
-
-        return view('LandingPage.user.team',compact('referals'));
+        $users = User::where('referal',auth()->user()->email)->get();
+        return view('LandingPage.user.team',compact('users'));
     }
 
     public function performTask()
     {
-        return view('LandingPage.user.task');
+        $tasks = task::get();
+        return view('LandingPage.user.task',compact('tasks'));
     }
 
 
