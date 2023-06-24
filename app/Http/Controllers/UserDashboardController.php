@@ -59,12 +59,13 @@ class UserDashboardController extends Controller
 
         $image = $validated['img'];
         $imageName = rand(111111,99999). '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('images'),$image);
+        $image->move(public_path('images/'),$image);
 
         // save into database
 
         $levelFees = new levelFees();
         $levelFees->user_id = auth()->user()->id;
+        $levelFees->user_name = auth()->user()->name;
         $levelFees->level = $levelName;
         $levelFees->trxId = $validated['trxId'];
         $levelFees->img = $imageName;

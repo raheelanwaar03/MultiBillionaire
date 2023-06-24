@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\AdminDashboardController;
+use App\Http\Controllers\admin\ManageLevelController;
 use App\Http\Controllers\admin\TaskController;
 use App\Http\Controllers\admin\WidthrawController;
 use Illuminate\Support\Facades\Route;
@@ -37,6 +38,9 @@ Route::name('Admin.')->prefix('Admin')->middleware('admin','auth')->group(functi
     Route::post('/Enter/Task',[TaskController::class,'add'])->name('Enter.Task');
     Route::get('/All/Task',[TaskController::class,'allTask'])->name('All.Task');
     Route::get('/Delete/Task/{id}',[TaskController::class,'delete'])->name('Delete.Task');
+
+    // Level routes
+    Route::get('All/Level/Requests',[ManageLevelController::class,'index'])->name('Level.Requests.From.Users');
 
 
 });
