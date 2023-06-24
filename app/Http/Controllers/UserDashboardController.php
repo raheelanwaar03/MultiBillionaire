@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\admin\task;
 use App\Models\level;
 use App\Models\User;
+use App\Models\user\levelFees;
 use App\Models\user\WidthrawBalance;
 use Illuminate\Http\Request;
 
@@ -44,6 +45,31 @@ class UserDashboardController extends Controller
     {
         $level = level::find($id);
         return view('LandingPage.user.fees',compact('level'));
+    }
+
+    public function levelFees(Request $request,$id)
+    {
+        $validated = $request->validate([
+            'trxId' => 'required',
+            'img' => 'required',
+        ]);
+
+        $level = level::find($id);
+        $levelName = $level->level;
+
+        $image = $validated['img'];
+        $imageName = rand(111111,99999). '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('images'),$image);
+
+        // save into database
+
+        $levelFees = new levelFees();
+        $levelFees->user_id = auth()->user()->id;
+        $levelFees->level = $levelName;
+        $levelFees->trxId = $validated['trxId'];
+        $levelFees->img = $imageName;
+        $levelFees->save();
+        return redirect()->route('LandingPage')->with('success','Your request has been submit.We will unlock your level after verification');
     }
 
 

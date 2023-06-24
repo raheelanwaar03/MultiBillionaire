@@ -31,9 +31,8 @@
                                 </div>
                             </div>
                             <img src="{{ asset('assets/img/content/qr.png') }}" alt="" class="mt-15">
-                            <h4>This is your Wallet ID</h4>
-                            <p class="g-text mb-0">Scan This crediential to send or exchange crypto assets with just scaning
-                                this code</p>
+                            <h4>You have to pay {{$level->invest}}$ for unlock {{ $level->level }}</h4>
+                            <p class="g-text mb-0">Enter TRX Id and Screen shot of the payment you have sended for unlocking {{ $level->level }}</p>
                         </div>
                     </div>
                     <div class="card active">
@@ -41,7 +40,7 @@
                             <h4 class="text-center">Enter Details and Submit</h4>
                         </div>
                         <div class="card-body">
-                            <form action="#">
+                            <form action="{{ route('User.Level.Fees',['id'=>$level->id]) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-gorup">
                                     <label for="">TRX ID</label>
@@ -50,7 +49,7 @@
                                 </div>
                                 <div class="form-gorup">
                                     <label for="">Image</label>
-                                    <input type="file" name="image" class="form-control" style="color:black;">
+                                    <input type="file" name="img" class="form-control" style="color:black;">
                                 </div>
                                 <div class="mt-3">
                                     <button type="submit" class="btn btn-success">Submit</button>

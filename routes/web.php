@@ -23,6 +23,7 @@ Route::name('User.')->prefix('User')->middleware('user','auth')->group(function(
     Route::get('/Perform/Task',[UserDashboardController::class,'performTask'])->name('Perform.Task');
     Route::get('/Vip/Levels',[UserDashboardController::class,'levels'])->name('Vip.Levels');
     Route::get('/Unlock/Level/{id}',[UserDashboardController::class,'unlock'])->name('Unlock.Level');
+    Route::post('/Level/Fees/{id}',[UserDashboardController::class,'levelFees'])->name('Level.Fees');
 
 });
 
