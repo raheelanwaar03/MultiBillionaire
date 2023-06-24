@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\admin\task;
+use App\Models\level;
 use App\Models\User;
 use App\Models\user\WidthrawBalance;
 use Illuminate\Http\Request;
@@ -35,7 +36,14 @@ class UserDashboardController extends Controller
 
     public function levels()
     {
-        return view('LandingPage.user.levels');
+        $levels = level::get();
+        return view('LandingPage.user.levels',compact('levels'));
+    }
+
+    public function unlock($id)
+    {
+        $level = level::find($id);
+        return view('LandingPage.user.fees',compact('level'));
     }
 
 

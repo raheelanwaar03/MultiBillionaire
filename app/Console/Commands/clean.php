@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\level;
 use App\Models\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
@@ -34,46 +35,89 @@ class clean extends Command
         Artisan::call('view:clear');
         Artisan::call('route:clear');
 
-        // $easyPaisa = new EasyPaisaMangement();
-        // $easyPaisa->easy_name = 'test';
-        // $easyPaisa->easy_num = '9999999999';
-        // $easyPaisa->text = 'Payment page text from admin';
-        // $easyPaisa->status = 1;
-        // $easyPaisa->save();
+        //  inserting levels
 
-        // Referal limite
-        // $setting = new Setting();
-        // $setting->first_refer = '50';
-        // $setting->second_refer = '30';
-        // $setting->third_refer = '10';
-        // $setting->minimum_amount = '50';
-        // $setting->maximun_amount = '500';
-        // $setting->status = 1;
-        // $setting->save();
+        $level = new level();
+        $level->level = 'level 1';
+        $level->invest = '10';
+        $level->dailyProfit = '0.6';
+        $level->duration = '45';
+        $level->totalProfit = '27';
+        $level->save();
 
-        // Verification page text
+        $level = new level();
+        $level->level = 'level 2';
+        $level->invest = '30';
+        $level->dailyProfit = '1.2';
+        $level->duration = '45';
+        $level->totalProfit = '54';
+        $level->save();
 
-        // $verificationText = new verificationText();
-        // $verificationText->text = 'Welcome to MoviesPay website we will approve your account after checking your given details';
-        // $verificationText->status = 1;
-        // $verificationText->save();
+        $level = new level();
+        $level->level = 'level 3';
+        $level->invest = '70';
+        $level->dailyProfit = '2.4';
+        $level->duration = '45';
+        $level->totalProfit = '108';
+        $level->save();
 
-        // //    set level according to thier referal
+        $level = new level();
+        $level->level = 'level 4';
+        $level->invest = '150';
+        $level->dailyProfit = '5';
+        $level->duration = '45';
+        $level->totalProfit = '225';
+        $level->save();
 
-        // $level = new ReferalLevel();
-        // $level->level1 = 1;
-        // $level->level2 = 2;
-        // $level->level3 = 3;
-        // $level->level4 = 4;
-        // $level->level5 = 5;
-        // $level->level6 = 6;
-        // $level->level7 = 7;
-        // $level->level8 = 8;
-        // $level->level9 = 9;
-        // $level->level10 = 10;
-        // $level->status = 1;
+        $level = new level();
+        $level->level = 'level 5';
+        $level->invest = '320';
+        $level->dailyProfit = '12';
+        $level->duration = '45';
+        $level->totalProfit = '540';
+        $level->save();
+
+        $level = new level();
+        $level->level = 'level 6';
+        $level->invest = '550';
+        $level->dailyProfit = '20';
+        $level->duration = '45';
+        $level->totalProfit = '900';
+        $level->save();
+
+        // $level = new level();
+        // $level->level = 'level 7';
+        // $level->invest = '980';
+        // $level->dailyProfit = '35';
+        // $level->duration = '45';
+        // $level->totalProfit = '1575';
         // $level->save();
 
+        // $level = new level();
+        // $level->level = 'level 8';
+        // $level->invest = '1620';
+        // $level->dailyProfit = '60';
+        // $level->duration = '45';
+        // $level->totalProfit = '2700';
+        // $level->save();
+
+        // $level = new level();
+        // $level->level = 'level 9';
+        // $level->invest = '2860';
+        // $level->dailyProfit = '100';
+        // $level->duration = '45';
+        // $level->totalProfit = '4500';
+        // $level->save();
+
+        // $level = new level();
+        // $level->level = 'level 10';
+        // $level->invest = '4400';
+        // $level->dailyProfit = '160';
+        // $level->duration = '45';
+        // $level->totalProfit = '7200';
+        // $level->save();
+
+        // inserting users
 
         $user = new User();
         $user->name = 'Admin';

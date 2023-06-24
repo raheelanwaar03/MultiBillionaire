@@ -61,7 +61,7 @@
 <body>
 
 
-    <div class="wrapper ">
+    <div class="wrapper">
         <div class="wrapper-inline">
             <div class="bottom-menu-section">
                 <ul class="bottom-menu list-unstyled list-inline">

@@ -342,7 +342,7 @@ nav.menu ul.main-menu>li li a{
 	margin: 7px 10px
 }
 .b-m-pluse{
-	background: #204d9c;
+	background: #e7e407;
     color: #fff;
     line-height: 37px;
     display: inline-block;
@@ -673,7 +673,7 @@ select.form-element{
 	background-color: #f9f9f9;
 }
 .button.darkblue{
-	background-color: #2C6EBC;
+	background-color: #f5d104;
 	color: #FFF;
 	border-color:transparent;
 	-webkit-box-shadow: none;
@@ -689,7 +689,7 @@ select.form-element{
 	box-shadow: none;
 }
 .button.blue{
-	background-color: #3e7ab7;
+	background-color: #fcd602;
 	color: #FFF;
 	border-color:transparent;
 	-webkit-box-shadow: none;
@@ -697,7 +697,7 @@ select.form-element{
 	box-shadow: none;
 }
 .button.yellow{
-	background-color: #ebad4d;
+	background-color: #ffe600;
 	color: #FFF;
 	border-color:transparent;
 	-webkit-box-shadow: none;
@@ -722,10 +722,10 @@ select.form-element{
 	box-shadow: none;
 }
 .more-btn{
-	background: #7965ff;
+	background: #fcf802;
     color: #fff;
     padding: 10px 40px;
-    border: 1px solid #7965ff;
+    border: 1px solid #fffb07;
     border-radius: 25px;
     margin-top: 10px;
     display: inline-block;
