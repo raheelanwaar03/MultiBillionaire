@@ -32,8 +32,8 @@ class WidthrawBalanceController extends Controller
             return redirect()->back()->with('error', 'Your account is empty');
         }
 
-        if ($validated['amount'] > 10) {
-            return redirect()->back()->with('error', 'You cannot request widthraw less than 10$');
+        if ($validated['amount'] >= 10) {
+            return redirect()->back()->with('error', 'You cannot request widthraw 10$ because you have not widthrawal fees');
         }
 
         // Dedecting Widthrawal Fees and widthrawal amount from user personal balance
