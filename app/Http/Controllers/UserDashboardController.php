@@ -73,5 +73,10 @@ class UserDashboardController extends Controller
         return redirect()->route('LandingPage')->with('success','Your request has been submit.We will unlock your level after verification');
     }
 
+    public function record()
+    {
+        return view('LandingPage.user.invesment');
+    }
+
 
 }
