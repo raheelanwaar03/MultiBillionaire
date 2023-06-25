@@ -26,7 +26,10 @@
         </div>
 
         <section class="trans-sec container">
-            <h4 class="title-main mt-0 ">Recent Transactions</h4>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="title-main mt-0 ">Recent Transactions</h4>
+                <a href="{{ route('User.Vip.Levels') }}" class="btn btn-warning text-white">Invest More</a>
+            </div>
             <ul class="transaction-list list-unstyled mb-0">
                 @foreach ($records as $record)
                     <li>

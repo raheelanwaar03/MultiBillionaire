@@ -1,7 +1,9 @@
 <?php
 
 use App\Models\User;
+use App\Models\level;
 use App\Models\user\WidthrawBalance;
+use App\Models\user\levelFees;
 
 function allUser()
 {
@@ -94,4 +96,19 @@ function todayApprovedWidthraw()
     }
 
     return $totalApproved;
+}
+
+// checking user Investment
+
+function investment()
+{
+    $investment = levelFees::where('user_id',auth()->user()->id)->get();
+    $totalInvestment = 0;
+    foreach ($investment as $invest)
+    {
+        $level = $invest->level;
+        $levelPrice = level::where('level',$level)->first();
+        $totalInvestment += $levelPrice->invest;
+    }
+    return $totalInvestment;
 }

@@ -28,15 +28,15 @@
                     <div class="content-row">
                         <div class="content-col">
                             <img src="{{ asset('assets/img/content/p1.png') }}" class="mb-5" alt="">
-                            <span>Invest( $12.12 )</span>
+                            <span>Invest( ${{ investment() }} )</span>
                         </div>
-                        <div class="content-col">
+                        {{-- <div class="content-col">
                             <img src="{{ asset('assets/img/content/p2.png') }}" class="mb-5" alt="">
                             <span>Recieve( $50 )</span>
-                        </div>
+                        </div> --}}
                         <div class="content-col">
                             <img src="{{ asset('assets/img/content/p3.png') }}" class="mb-5" alt="">
-                            <span>Widthraw( $29 )</span>
+                            <span>Widthraw( ${{ userApprovedBalance() }} )</span>
                         </div>
                     </div>
                 </div>
