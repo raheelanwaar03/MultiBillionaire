@@ -145,7 +145,7 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('Admin.Level.Requests.From.Users') }}">All Requests</a></li>
-
+                            <li><a href="{{ route('Admin.Unlock.Users') }}">Unlocked Levels</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">

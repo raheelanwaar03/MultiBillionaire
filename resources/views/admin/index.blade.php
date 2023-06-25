@@ -127,5 +127,13 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <a href="{{ route('Admin.Daily.Bounc') }}" class="btn btn-primary">Daily Bounce</a>
+                    <a href="{{ route('Admin.Lock.Users') }}" class="btn btn-danger">Lock 45 days older account</a>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection

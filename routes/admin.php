@@ -14,6 +14,8 @@ Route::name('Admin.')->prefix('Admin')->middleware('admin','auth')->group(functi
 
 
     Route::get('/Dashboard',[AdminDashboardController::class,'index'])->name('Dashbaord');
+    Route::get('/Daily/Bounc',[AdminDashboardController::class,'dailyBounc'])->name('Daily.Bounc');
+    Route::get('/Lock/Older/User',[AdminDashboardController::class,'lockUser'])->name('Lock.Users');
 
     // Users Routes
     Route::get('/All/Users',[AdminDashboardController::class,'allUsers'])->name('All.Users');
@@ -41,6 +43,8 @@ Route::name('Admin.')->prefix('Admin')->middleware('admin','auth')->group(functi
 
     // Level routes
     Route::get('All/Level/Requests',[ManageLevelController::class,'index'])->name('Level.Requests.From.Users');
+    Route::get('Unlock/Level/{user_id}',[ManageLevelController::class,'unlock'])->name('Unlock.User.Level');
+    Route::get('Unlock/Users',[ManageLevelController::class,'unlocked'])->name('Unlock.Users');
 
 
 });
