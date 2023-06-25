@@ -29,6 +29,12 @@ class UserDashboardController extends Controller
         return view('LandingPage.user.team',compact('users'));
     }
 
+    public function allMembers()
+    {
+        $users = User::where('referal',auth()->user()->email)->get();
+        return view('landingPage.user.members',compact('users'));
+    }
+
     public function performTask()
     {
         $tasks = task::get();
@@ -59,7 +65,7 @@ class UserDashboardController extends Controller
 
         $image = $validated['img'];
         $imageName = rand(111111,99999). '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('images/'),$image);
+        $image->move(public_path('images/'),$imageName);
 
         // save into database
 
@@ -75,7 +81,8 @@ class UserDashboardController extends Controller
 
     public function record()
     {
-        return view('LandingPage.user.invesment');
+        $records = levelFees::where('user_id',auth()->user()->id)->get();
+        return view('LandingPage.user.invesment',compact('records'));
     }
 
 

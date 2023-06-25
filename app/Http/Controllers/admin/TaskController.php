@@ -25,7 +25,7 @@ class TaskController extends Controller
 
         $image = $validated['img'];
         $imageName = rand(111111, 999999) . '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('images'), $image);
+        $image->move(public_path('images'), $imageName);
 
         $task = new task();
         $task->title = $validated['title'];

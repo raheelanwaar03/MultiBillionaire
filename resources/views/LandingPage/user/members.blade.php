@@ -28,18 +28,18 @@
         <section class="trans-sec container">
             <h4 class="title-main mt-0 ">Recent Transactions</h4>
             <ul class="transaction-list list-unstyled mb-0">
-                @foreach ($records as $record)
+                @foreach ($users as $user)
                     <li>
                         <div class="d-flex align-items-center justify-content-between">
                             <div class="d-flex align-items-center">
-                                <img class="img-xs" src="{{ asset('assets/img/vip.jpg') }}" alt="coin image">
+                                <img class="img-xs" src="{{ asset('assets/img/avatar.png') }}" alt="coin image">
                                 <div class="ml-10">
-                                    <h4 class="coin-name">{{ $record->level }}</h4>
-                                    <small class="text-muted">{{ $record->created_at }}</small>
+                                    <h4 class="coin-name">{{ $user->name }}</h4>
+                                    <small class="text-muted">{{ $user->created_at }}</small>
                                 </div>
                             </div>
                             <div>
-                                <small class="d-block mb-0 txt-green">{{ $record->status }}</small>
+                                <small class="d-block mb-0 txt-green">{{ $user->status }}</small>
                             </div>
                         </div>
                     </li>

@@ -14,7 +14,7 @@
                 <div class="d-flex align-items-center">
                     <div class="d-flex flex-grow">
                         <div class="mr-auto">
-                            <h1 class="b-val"> $1,249.03 </h1>
+                            <h1 class="b-val"> $0.0 </h1>
                             <p class="g-text mb-10">Total Referal Earnings</p>
                         </div>
                     </div>
@@ -24,7 +24,7 @@
                 <div class="d-flex align-items-center">
                     <div class="d-flex flex-grow">
                         <div class="mr-auto">
-                            <h1 class="b-val"> $336,32 </h1>
+                            <h1 class="b-val"> $0.0 </h1>
                             <p class="g-text mb-10">Pending Earnings</p>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                 <div class="d-flex align-items-center">
                     <div class="d-flex flex-grow">
                         <div class="mr-auto">
-                            <h1 class="b-val"> $1,249.03 </h1>
+                            <h1 class="b-val"> $0.0 </h1>
                             <p class="g-text mb-10">Ready to Payout</p>
                         </div>
                     </div>
@@ -50,7 +50,11 @@
                             <div class="d-flex flex-grow">
                                 <div class="mr-auto">
                                     <h3 class="w-text mt-0 mb-0">Refer Fiends & Earn</h3>
-                                    <p class="mb-0" style="color:gold">More You refer more you earn</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="mb-0" style="color:gold">More You refer more you earn</p>
+                                        <a href="{{ route('User.All.Members') }}" class="btn btn-danger ml-3">See Referal
+                                            Friends</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -59,8 +63,9 @@
                         <h4 class="mt-0">Your Referal Link</h4>
                         <div class="form-row-group relative">
                             <div class="form-row no-padding">
-                                <input type="text" name="aaa" class="form-element"
-                                    value="{{ route('register', ['referal' => Auth::user()->email]) }}" id="myInput">
+                                <input type="text" class="form-control"
+                                    value="{{ route('register', ['referal' => Auth::user()->email]) }}" id="myInput"
+                                    readonly>
                                 <a onclick="copy()" class="ref-copy"><i class="fa fa-copy"></i></a>
                             </div>
                         </div>

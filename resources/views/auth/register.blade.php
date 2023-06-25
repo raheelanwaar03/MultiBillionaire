@@ -24,7 +24,8 @@
                             </div>
                             <div class="form-row no-padding">
                                 <i class="fa fa-lock"></i>
-                                <input type="number" name="pin" class="form-element" placeholder="Enter Your 5 Digits Securet Pin" maxlength="5">
+                                <input type="number" name="pin" class="form-element"
+                                    placeholder="Enter Your 5 Digits Securet Pin" maxlength="5">
                             </div>
                             <div class="form-row no-padding">
                                 <i class="fa fa-lock"></i>
@@ -36,12 +37,15 @@
                                 <input type="password" name="password_confirmation" class="form-element"
                                     placeholder="Confirm Your Password">
                             </div>
-                        </div>
-                        <div class="form-divider"></div>
-
-                        <div class="form-row">
-                            <button type="submit" class="button circle block orange">Register</button>
-                        </div>
+                            <div class="form-row no-padding">
+                                <i class="fa fa-user-circle" aria-hidden="true"></i>
+                                <input type="text" name="referal" value="{{ $referal }}" class="form-element"
+                                    readonly>
+                            </div>
+                            <div class="form-divider"></div>
+                            <div class="form-row">
+                                <button type="submit" class="button circle block orange">Register</button>
+                            </div>
                     </form>
 
 
