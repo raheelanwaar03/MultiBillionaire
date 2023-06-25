@@ -26,6 +26,8 @@ Route::name('User.')->prefix('User')->middleware('user','auth')->group(function(
     Route::get('/Unlock/Level/{id}',[UserDashboardController::class,'unlock'])->name('Unlock.Level');
     Route::post('/Level/Fees/{id}',[UserDashboardController::class,'levelFees'])->name('Level.Fees');
     Route::get('/Investment/Record',[UserDashboardController::class,'record'])->name('Investment.Record');
+    Route::get('/Change/Pin',[UserDashboardController::class,'changePin'])->name('Change.Pin');
+    Route::post('/Update/Pin',[UserDashboardController::class,'updatePin'])->name('Update.Pin');
 
 });
 

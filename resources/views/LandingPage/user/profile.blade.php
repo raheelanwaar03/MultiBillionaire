@@ -45,17 +45,17 @@
                 <div class="form-row no-padding">
                     <i class="fa fa-user"></i>
                     <input type="text" name="name" class="form-element" placeholder="Username"
-                        value="{{ auth()->user()->name }}">
+                        value="{{ auth()->user()->name }}" readonly>
                 </div>
                 <div class="form-row no-padding">
                     <i class="fa fa-envelope"></i>
                     <input type="email" name="email" class="form-element" placeholder="Email"
-                        value="{{ auth()->user()->email }}">
+                        value="{{ auth()->user()->email }}" readonly>
                 </div>
                 <div class="form-row no-padding">
                     <i class="fa fa-lock"></i>
                     <input type="number" name="pin" class="form-element" placeholder="Pin"
-                        value="{{ auth()->user()->pin }}">
+                        value="{{ auth()->user()->pin }}" readonly>
                 </div>
             </div>
         </section>

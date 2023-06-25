@@ -106,7 +106,7 @@
                 </div>
                 <div class="col-sm-12 d-flex justify-content-center align-items-center mt-3">
                     <div class="col-sm-4">
-                        <a href="#" class="text-decoration-none">
+                        <a href="{{ route('User.Change.Pin') }}" class="text-decoration-none">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="text-center">
