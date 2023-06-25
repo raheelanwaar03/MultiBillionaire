@@ -32,7 +32,7 @@ class UserDashboardController extends Controller
     public function allMembers()
     {
         $users = User::where('referal', auth()->user()->email)->get();
-        return view('landingPage.user.members', compact('users'));
+        return view('LandingPage.user.members', compact('users'));
     }
 
     public function performTask()
