@@ -4,7 +4,7 @@
     <div class="wrapper">
         <div class="wrapper-inline">
             <header>
-                <a class="go-back-link" href="#"><i class="fa fa-arrow-left"></i></a>
+                <a class="go-back-link" href="{{ route('LandingPage') }}"><i class="fa fa-arrow-left"></i></a>
                 <h1 class="page-title">REGISTER</h1>
             </header>
             <main>
