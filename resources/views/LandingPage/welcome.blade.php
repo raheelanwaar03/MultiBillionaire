@@ -118,6 +118,18 @@
                         </a>
                     </div>
                     <div class="col-sm-4">
+                        <a href="https://chat.whatsapp.com/Cr5EheYCyLJ3ZMzouKjon8" target="_blank" class="text-decoration-none">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        <img src="{{ asset('assets/img/whatsUp.png') }}" alt="img" height="40px" width="40px">
+                                    </div>
+                                    <h5 class="text-decoration-none text-center">Gruop link</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
                         <a href="#" class="text-decoration-none">
                             <div class="card">
                                 <div class="card-body">
