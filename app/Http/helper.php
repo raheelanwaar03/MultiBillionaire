@@ -114,15 +114,22 @@ function investment()
     return $totalInvestment;
 }
 
+function recived()
+{
+    $investment = levelFees::where('user_id',auth()->user()->id)->get();
+    $totalInvestment = 0;
+    foreach ($investment as $invest)
+    {
+        $level = $invest->level;
+        $levelPrice = level::where('level',$level)->first();
+        $totalInvestment += $levelPrice->totalProfit;
+    }
+    return $totalInvestment;
+}
+
 
 function participated()
 {
     $participated = participated::get()->count();
     return $participated;
-    // $total = 0;
-    // foreach($participated as $user)
-    // {
-    //     $user
-    // }
-    // $participated->use
 }

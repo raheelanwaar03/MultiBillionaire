@@ -42,7 +42,7 @@
             </div>
         </section>
 
-        <section class="container refer mt-15">
+        <section class="container refer mb-5">
             <div id="cont">
                 <div id="content-body">
                     <div class="content-head purp">
@@ -64,7 +64,7 @@
                         <div class="form-row-group relative">
                             <div class="form-row no-padding">
                                 <input type="text" class="form-control"
-                                    value="{{ route('register', ['referal' => Auth::user()->email]) }}" id="myInput"
+                                    value="{{ route('register', ['referal' => Auth::user()->email]) }}" style="color:black" id="myInput"
                                     readonly>
                                 <a onclick="copy()" class="ref-copy"><i class="fa fa-copy"></i></a>
                             </div>

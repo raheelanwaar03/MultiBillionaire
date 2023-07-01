@@ -26,8 +26,12 @@
                             <div class="form-row-group with-icons">
                                 <div class="form-row no-padding">
                                     <i class="cc BTC text-muted"></i>
-                                    <input type="text" name="aaa" class="form-element"
-                                        value="XAHS-AKDLAD4523AAIadsfasdf" readonly>
+                                    {{-- <input type="text" class="form-control"
+                                    value="{{ route('register', ['referal' => Auth::user()->email]) }}" id="myInput"
+                                    readonly> --}}
+                                    <input type="text" name="aaa" id="myInput" class="form-element"
+                                    value="TGMWTRrTDc7LjQe6gFzu1gtNENsbgRRvF4" readonly>
+                                    <a onclick="copy()" class="ref-copy pr-4" style="border-radius:10px;"><i class="fa fa-copy"></i></a>
                                 </div>
                             </div>
                             <img src="{{ asset('assets/img/content/qr.png') }}" alt="" class="mt-15">
@@ -72,4 +76,16 @@
                 </div>
             </footer>
     </main>
+
+    <script>
+        function copy() {
+            // Get the text field
+            var copyText = document.getElementById("myInput");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(copyText.value);
+            // Alert the copied text
+            alert("Copied the text: " + copyText.value);
+        }
+    </script>
 @endsection

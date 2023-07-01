@@ -22,17 +22,17 @@
                 <ul class="trader-info-list list-unstyled">
                     <li>
                         <div class="profile1"></div>
-                        <h2>$324</h2>
+                        <h2>${{ investment() }}</h2>
                         <small class="txt-muted">Invest</small>
                     </li>
                     <li>
                         <div class="profile2"></div>
-                        <h2>$70,504</h2>
-                        <small class="txt-muted">Receieved</small>
+                        <h2>${{ recived() }}</h2>
+                        <small class="txt-muted">Will Recive</small>
                     </li>
                     <li>
                         <div class="profile3"></div>
-                        <h2>$10,283</h2>
+                        <h2>${{ userWidthrawalBalance() }}</h2>
                         <small class="txt-muted">Widthraw</small>
                     </li>
                 </ul>
