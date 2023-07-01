@@ -176,7 +176,7 @@ class UserDashboardController extends Controller
         $luckyPerson->luck_id = $id;
         $luckyPerson->save();
 
-        return redirect()->back()->with('success','You have been participated in this campaign successfully');
+        return redirect()->back()->with('success','You have been participated in this campaign successfully! Winner will announce after 45 day.');
 
     }
 
