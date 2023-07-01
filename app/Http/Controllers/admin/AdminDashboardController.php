@@ -106,4 +106,21 @@ class AdminDashboardController extends Controller
         return redirect()->back()->with('success','All Old Levels are Locked Now!');
 
     }
+
+    public function editUser($id)
+    {
+        $user = User::find($id);
+        return view('admin.user.edit',compact('user'));
+    }
+
+    public function updateUser(Request $request,$id)
+    {
+        $user = User::find($id);
+        $user->level = $request->level;
+        $user->balance = $request->balance;
+        $user->save();
+        return redirect()->back()->with('success','User details updated successfully');
+    }
+
+
 }

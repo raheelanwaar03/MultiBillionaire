@@ -17,6 +17,8 @@ Route::name('Admin.')->prefix('Admin')->middleware('admin','auth')->group(functi
     Route::get('/Dashboard',[AdminDashboardController::class,'index'])->name('Dashbaord');
     Route::get('/Daily/Bounc',[AdminDashboardController::class,'dailyBounc'])->name('Daily.Bounc');
     Route::get('/Lock/Older/User',[AdminDashboardController::class,'lockUser'])->name('Lock.Users');
+    Route::get('/Edit/User/{id}',[AdminDashboardController::class,'editUser'])->name('edit.User');
+    Route::post('/Update/User/{id}',[AdminDashboardController::class,'updateUser'])->name('Update.User');
 
     // Users Routes
     Route::get('/All/Users',[AdminDashboardController::class,'allUsers'])->name('All.Users');

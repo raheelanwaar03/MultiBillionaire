@@ -26,29 +26,17 @@
 
         <section class="trans-sec container mb-5">
             <div class="d-flex justify-content-between align-items-center">
-                <h4 class="title-main mt-0 ">Luck</h4>
-                <a href="{{ route('User.See.Winer') }}" class="btn btn-warning text-white">See Winner</a>
-                <h4 class="title-main mt-0 ">Total Pariticipated: {{ participated() }}</h4>
+                <h4 class="title-main mt-0 ">Winer</h4>
             </div>
             <div class="container mb-5 mt-3">
                 <div class="col-sm-12 d-flex justify-content-center align-items-center mb-5">
-                    @foreach ($lucks as $luck)
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src="{{ asset('images/' . $luck->image) }}" height="120px"
                                 alt="image cap">
                             <div class="card-body">
-                                <h3 class="card-title">{{ $luck->title }}</h3>
-                                <h4>Price: {{ $luck->price }}</h4>
-                                <p class="card-text">Try Your Luck and win exiciting prizes.</p>
-                            </div>
-                            <div class="card-body" style="margin-top: -30px">
-                                <h3>
-                                    <a href="{{ route('User.Try.Luck', ['id' => $luck->id]) }}"
-                                        class="btn btn-warning text-white">Try it now</a>
-                                </h3>
+                                <h3 class="card-title">Winner Name: {{ $user->name }}</h3>
                             </div>
                         </div>
-                    @endforeach
                 </div>
             </div>
         </section>

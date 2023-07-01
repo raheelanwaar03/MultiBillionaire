@@ -56,8 +56,10 @@ class LuckController extends Controller
 
     public function luckyPerson()
     {
-        $luckyPerson = luckyPersons::get();
-        return $luckyPerson;
+        $user = luckyPersons::inRandomOrder()->first();
+        $user->status = 'winner';
+        $user->save();
+        return view('admin.luck.winer',compact('user'));
     }
 
 

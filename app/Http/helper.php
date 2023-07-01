@@ -2,6 +2,7 @@
 
 use App\Models\User;
 use App\Models\level;
+use App\Models\luckyPersons;
 use App\Models\participated;
 use App\Models\user\WidthrawBalance;
 use App\Models\user\levelFees;
@@ -130,6 +131,6 @@ function recived()
 
 function participated()
 {
-    $participated = participated::get()->count();
+    $participated = luckyPersons::get()->count();
     return $participated;
 }

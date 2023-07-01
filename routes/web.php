@@ -31,6 +31,7 @@ Route::name('User.')->prefix('User')->middleware('user','auth','status')->group(
     Route::get('/Do/Task/{id}',[UserDashboardController::class,'doTask'])->name('Do.Task');
     Route::get('/Luck',[UserDashboardController::class,'luck'])->name('Luck');
     Route::get('/Try/Luck/{id}',[UserDashboardController::class,'tryLuck'])->name('Try.Luck');
+    Route::get('/Winer',[UserDashboardController::class,'winer'])->name('See.Winer');
 
 });
 

@@ -173,11 +173,20 @@ class UserDashboardController extends Controller
         $luckyPerson->user_id = auth()->user()->id;
         $luckyPerson->name = auth()->user()->name;
         $luckyPerson->email = auth()->user()->email;
+        $luckyPerson->luck_id = $id;
         $luckyPerson->save();
 
         return redirect()->back()->with('success','You have been participated in this campaign successfully');
 
-
     }
+
+    public function winer()
+    {
+        $user = luckyPersons::where('status','winner')->first();
+        $luck_id = $user->luck_id;
+        $luck = luck::where('id',$luck_id)->first();
+        return view('LandingPage.user.winer',compact('user','luck'));
+    }
+
 
 }

@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('user_id');
             $table->string('name');
+            $table->string('luck_id');
             $table->string('email');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }
