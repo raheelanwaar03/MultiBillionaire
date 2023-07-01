@@ -30,6 +30,7 @@ Route::name('User.')->prefix('User')->middleware('user','auth')->group(function(
     Route::post('/Update/Pin',[UserDashboardController::class,'updatePin'])->name('Update.Pin');
     Route::get('/Do/Task/{id}',[UserDashboardController::class,'doTask'])->name('Do.Task');
     Route::get('/Luck',[UserDashboardController::class,'luck'])->name('Luck');
+    Route::get('/Try/Luck/{id}',[UserDashboardController::class,'tryLuck'])->name('Try.Luck');
 
 });
 

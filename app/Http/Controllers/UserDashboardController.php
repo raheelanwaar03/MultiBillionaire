@@ -153,4 +153,23 @@ class UserDashboardController extends Controller
         $lucks = Luck::get();
         return view('LandingPage.user.luck', compact('lucks'));
     }
+
+    public function tryLuck($id)
+    {
+        $luck = Luck::find($id);
+        $price = $luck->price;
+        $user = User::where('id',auth()->user()->id)->where('status','approved')->first();
+
+        if ($user->balance < $price)
+        {
+            return redirect()->back()->with('error','You have not enough balance');
+        }
+
+        $user->balance -= $price;
+        $user->save();
+        return redirect()->back()->with('success','You have been participated in this campaign successfully');
+
+
+    }
+
 }

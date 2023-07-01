@@ -84,7 +84,7 @@
                     <li>
                         <a href="{{ route('User.Luck') }}">
                             <div class="text-center p-2">
-                                <i class="fa fa-star" aria-hidden="true" style="font-size:30px;color:#FFDB08"></i>
+                                <i class="fa fa-heart" aria-hidden="true" style="font-size:30px;color:#FFDB08"></i>
                                 <p>Luck</p>
                             </div>
                         </a>

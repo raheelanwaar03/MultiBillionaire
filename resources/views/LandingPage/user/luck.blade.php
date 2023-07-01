@@ -24,21 +24,28 @@
             </div>
         </div>
 
-        <section class="trans-sec container">
-            <h4 class="title-main mt-0 ">Luck</h4>
-            <div class="container">
-                <div class="col-sm-12 d-flex justify-content-center align-items-center mb-3">
+        <section class="trans-sec container mb-5">
+            <div class="d-flex justify-content-between align-items-center">
+                <h4 class="title-main mt-0 ">Luck</h4>
+                <h4 class="title-main mt-0 ">Total Pariticipated: {{ participated() }}</h4>
+            </div>
+            <div class="container mb-5">
+                <div class="col-sm-12 d-flex justify-content-center align-items-center mb-5">
                     @foreach ($lucks as $luck)
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/'. $luck->image)}}" alt="image cap">
-                        <div class="card-body">
-                          <h5 class="card-title"></h5>
-                          <p class="card-text">Try Your Luck and win exiciting prizes.</p>
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="{{ asset('images/' . $luck->image) }}" height="120px" alt="image cap">
+                            <div class="card-body">
+                                <h3 class="card-title">{{ $luck->title }}</h3>
+                                <h4>Price: {{ $luck->price }}</h4>
+                                <p class="card-text">Try Your Luck and win exiciting prizes.</p>
+                            </div>
+                            <div class="card-body" style="margin-top: -30px">
+                                <h3>
+                                    <a href="{{ route('User.Try.Luck', ['id' => $luck->id]) }}"
+                                        class="btn btn-warning text-white">Try it now</a>
+                                </h3>
+                            </div>
                         </div>
-                        <div class="card-body">
-                          <a href="#" class="card-link">Card link</a>
-                        </div>
-                      </div>
                         {{-- <div class="col-sm-4">
                             <a href="#" class="text-decoration-none">
                                 <div class="card">
@@ -56,13 +63,6 @@
                 </div>
             </div>
         </section>
-        <footer>
-            <div class="container">
-                <ul>
-                </ul>
-                <p>Copyright © All Right Reserved</p>
-            </div>
-        </footer>
     </main>
     <!-- Page content end -->
     </div>

@@ -18,7 +18,11 @@
 
                     </div>
                     <div class="ml-auto align-self-end">
-                        <h3 class="text-white">{{ auth()->user()->level }}</h3>
+                        @if (auth()->user())
+                            <h3 class="text-white">{{ auth()->user()->level }}</h3>
+                        @else
+                            <h3 class="text-white">level 0</h3>
+                        @endif
                     </div>
                 </div>
             </div>

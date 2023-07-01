@@ -2,6 +2,7 @@
 
 use App\Models\User;
 use App\Models\level;
+use App\Models\participated;
 use App\Models\user\WidthrawBalance;
 use App\Models\user\levelFees;
 
@@ -111,4 +112,17 @@ function investment()
         $totalInvestment += $levelPrice->invest;
     }
     return $totalInvestment;
+}
+
+
+function participated()
+{
+    $participated = participated::get()->count();
+    return $participated;
+    // $total = 0;
+    // foreach($participated as $user)
+    // {
+    //     $user
+    // }
+    // $participated->use
 }
