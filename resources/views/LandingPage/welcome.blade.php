@@ -9,11 +9,11 @@
                 <div class="d-flex flex-grow">
                     <div class="mr-auto">
                         @if (auth()->user())
-                        <h1 class="b-val"> ${{ auth()->user()->balance }} </h1>
-                        <p class="g-text mb-0">Total Balance</p>
+                            <h1 class="b-val"> ${{ auth()->user()->balance }} </h1>
+                            <p class="g-text mb-0">Total Balance</p>
                         @else
-                        <h1 class="b-val"> $0.0 </h1>
-                        <p class="g-text mb-0">Total Balance</p>
+                            <h1 class="b-val"> $0.0 </h1>
+                            <p class="g-text mb-0">Total Balance</p>
                         @endif
 
                     </div>
@@ -29,7 +29,7 @@
             <div class="container">
                 <div class="col-sm-12 d-flex justify-content-center align-items-center mb-3">
                     <div class="col-sm-4">
-                        <a href="{{ route('User.Widthraw.Page')  }}" class="text-decoration-none">
+                        <a href="{{ route('User.Widthraw.Page') }}" class="text-decoration-none">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="text-center">
@@ -71,30 +71,6 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="text-center">
-                                        <i class="fa fa-credit-card" style="font-size:35px;color:#FFDB08;"></i>
-                                    </div>
-                                    <h5 class="text-decoration-none text-center">Transfer</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-4">
-                        <a href="#" class="text-decoration-none">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        <i class="fa fa-columns" style="font-size:35px;color:#FFDB08;"></i>
-                                    </div>
-                                    <h5 class="text-decoration-none text-center">Amount</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-4">
-                        <a href="#" class="text-decoration-none">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="text-center">
                                         <i class="fa fa-unlock" style="font-size:35px;color:#FFDB08;"></i>
                                     </div>
                                     <h5 class="text-decoration-none text-center">Modify Login password</h5>
@@ -102,8 +78,6 @@
                             </div>
                         </a>
                     </div>
-                </div>
-                <div class="col-sm-12 d-flex justify-content-center align-items-center mt-3">
                     <div class="col-sm-4">
                         <a href="{{ route('User.Change.Pin') }}" class="text-decoration-none">
                             <div class="card">
@@ -117,17 +91,21 @@
                         </a>
                     </div>
                     <div class="col-sm-4">
-                        <a href="https://chat.whatsapp.com/Cr5EheYCyLJ3ZMzouKjon8" target="_blank" class="text-decoration-none">
+                        <a href="https://chat.whatsapp.com/Cr5EheYCyLJ3ZMzouKjon8" target="_blank"
+                            class="text-decoration-none">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="text-center">
-                                        <img src="{{ asset('assets/img/whatsUp.png') }}" alt="img" height="40px" width="40px">
+                                        <img src="{{ asset('assets/img/whatsUp.png') }}" alt="img" height="40px"
+                                            width="40px">
                                     </div>
                                     <h5 class="text-decoration-none text-center">Gruop link</h5>
                                 </div>
                             </div>
                         </a>
                     </div>
+                </div>
+                <div class="col-sm-12 d-flex justify-content-center align-items-center mt-3">
                     <div class="col-sm-4">
                         <a href="#" class="text-decoration-none">
                             <div class="card">
