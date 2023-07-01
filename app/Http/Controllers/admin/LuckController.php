@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\admin\Luck;
+use App\Models\luckyPersons;
 use Illuminate\Http\Request;
 
 class LuckController extends Controller
@@ -46,4 +47,18 @@ class LuckController extends Controller
         $luck->delete();
         return redirect()->back()->with('success','Luck Deleted successfully');
     }
+
+    public function allInvestors()
+    {
+        $users = luckyPersons::get();
+        return view('admin.luck.allInvestor',compact('users'));
+    }
+
+    public function luckyPerson()
+    {
+        $luckyPerson = luckyPersons::get();
+        return $luckyPerson;
+    }
+
+
 }

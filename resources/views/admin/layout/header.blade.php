@@ -154,63 +154,8 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('Admin.Add.Luck') }}">Add Details</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="flaticon-045-heart"></i>
-                            <span class="nav-text">Widget</span>
-                        </a>
-                        <ul aria-expanded="false" class="mm-collapse" style="">
-                            <li><a href="widget-card.html">Widget Card</a></li>
-                            <li><a href="widget-chart.html">widget Chart</a></li>
-                            <li><a href="widget-list.html">Widget List</a></li>
-
-                        </ul>
-                    </li>
-
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="flaticon-072-printer"></i>
-                            <span class="nav-text">Forms</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="form-element.html">Form Elements</a></li>
-                            <li><a href="form-wizard.html">Wizard</a></li>
-                            <li><a href="form-ckeditor.html">CkEditor</a></li>
-                            <li><a href="form-pickers.html">Pickers</a></li>
-                            <li><a href="form-validation.html">Form Validate</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="flaticon-043-menu"></i>
-                            <span class="nav-text">Table</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="table-bootstrap-basic.html">Bootstrap</a></li>
-                            <li><a href="table-datatable-basic.html">Datatable</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="flaticon-022-copy"></i>
-                            <span class="nav-text">Pages</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="page-login.html">Login<span
-                                        class="badge badge-xs badge-success ms-3">Update</span></a></li>
-                            <li><a href="page-register.html">Register<span
-                                        class="badge badge-xs badge-success ms-3">Update</span></a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Error<span
-                                        class="badge badge-xs badge-success ms-3">Upadte</span></a>
-                                <ul aria-expanded="false">
-                                    <li><a href="page-error-400.html">Error 400</a></li>
-                                    <li><a href="page-error-403.html">Error 403</a></li>
-                                    <li><a href="page-error-404.html">Error 404</a></li>
-                                    <li><a href="page-error-500.html">Error 500</a></li>
-                                    <li><a href="page-error-503.html">Error 503</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="page-lock-screen.html">Lock Screen<span
-                                        class="badge badge-xs badge-success ms-3">Update</span></a></li>
-                            <li><a href="empty-page.html">Empty Page</a></li>
+                            <li><a href="{{ route('Admin.All.Luck') }}">All luck Items</a></li>
+                            <li><a href="{{ route('Admin.All.Investors') }}">All Investors</a></li>
                         </ul>
                     </li>
                 </ul>

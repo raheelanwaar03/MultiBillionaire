@@ -171,6 +171,8 @@ class UserDashboardController extends Controller
 
         $luckyPerson = new luckyPersons();
         $luckyPerson->user_id = auth()->user()->id;
+        $luckyPerson->name = auth()->user()->name;
+        $luckyPerson->email = auth()->user()->email;
         $luckyPerson->save();
 
         return redirect()->back()->with('success','You have been participated in this campaign successfully');
