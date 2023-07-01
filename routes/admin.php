@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\AdminDashboardController;
+use App\Http\Controllers\admin\LuckController;
 use App\Http\Controllers\admin\ManageLevelController;
 use App\Http\Controllers\admin\TaskController;
 use App\Http\Controllers\admin\WidthrawController;
@@ -46,5 +47,10 @@ Route::name('Admin.')->prefix('Admin')->middleware('admin','auth')->group(functi
     Route::get('Unlock/Level/{user_id}',[ManageLevelController::class,'unlock'])->name('Unlock.User.Level');
     Route::get('Unlock/Users',[ManageLevelController::class,'unlocked'])->name('Unlock.Users');
 
+    // luck page
+    Route::get('/Add',[LuckController::class,'add'])->name('Add.Luck');
+    Route::post('/Store',[LuckController::class,'store'])->name('Store.Luck');
+    Route::get('/All/Luck',[LuckController::class,'index'])->name('All.Luck');
+    Route::get('/Delete/Luck/{id}',[LuckController::class,'delete'])->name('Delete.Luck');
 
 });

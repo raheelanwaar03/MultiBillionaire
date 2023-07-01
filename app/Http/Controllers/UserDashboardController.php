@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\admin\Luck;
 use App\Models\admin\task;
 use App\Models\level;
 use App\Models\User;
@@ -129,10 +130,9 @@ class UserDashboardController extends Controller
 
         // Storing in vistors
 
-        $vistor = vistors::where('user_id',auth()->user()->id)->where('product_id',$id)->whereDate('created_at','=',Carbon::today())->first();
+        $vistor = vistors::where('user_id', auth()->user()->id)->where('product_id', $id)->whereDate('created_at', '=', Carbon::today())->first();
 
-        if(!$vistor)
-        {
+        if (!$vistor) {
             $vistor = new vistors();
             $vistor->user_id = auth()->user()->id;
             $vistor->product_id = $id;
@@ -143,10 +143,14 @@ class UserDashboardController extends Controller
             $user->balance += $commission;
             $user->save();
             return redirect()->back()->with('success', 'Task compeleted successfully');
-
         }
 
         return redirect()->back()->with('error', 'You have been compeleted this task before!');
+    }
 
+    public function luck()
+    {
+        $lucks = Luck::get();
+        return view('LandingPage.user.luck', compact('lucks'));
     }
 }

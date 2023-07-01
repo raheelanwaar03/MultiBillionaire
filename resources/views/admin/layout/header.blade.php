@@ -150,16 +150,10 @@
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                             <i class="flaticon-045-heart"></i>
-                            <span class="nav-text">Plugins</span>
+                            <span class="nav-text">Luck</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="uc-select2.html">Select 2</a></li>
-                            <li><a href="uc-nestable.html">Nestedable</a></li>
-                            <li><a href="uc-noui-slider.html">Noui Slider</a></li>
-                            <li><a href="uc-sweetalert.html">Sweet Alert</a></li>
-                            <li><a href="uc-toastr.html">Toastr</a></li>
-                            <li><a href="map-jqvmap.html">Jqv Map</a></li>
-                            <li><a href="uc-lightgallery.html">Light Gallery</a></li>
+                            <li><a href="{{ route('Admin.Add.Luck') }}">Add Details</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
