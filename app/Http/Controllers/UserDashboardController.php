@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\admin\Luck;
 use App\Models\admin\task;
 use App\Models\level;
+use App\Models\luckyPersons;
 use App\Models\User;
 use App\Models\user\levelFees;
 use App\Models\user\vistors;
@@ -167,6 +168,11 @@ class UserDashboardController extends Controller
 
         $user->balance -= $price;
         $user->save();
+
+        $luckyPerson = new luckyPersons();
+        $luckyPerson->user_id = auth()->user()->id;
+        $luckyPerson->save();
+
         return redirect()->back()->with('success','You have been participated in this campaign successfully');
 
 
