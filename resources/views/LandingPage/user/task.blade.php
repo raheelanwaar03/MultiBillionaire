@@ -20,46 +20,32 @@
                 <div class="tab-content">
                     <div class="content-item active" id="pending">
                         @foreach ($tasks as $task)
-                            <section class="mt-15 mb-15 container">
-                                <div class="coin-box">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div class="d-flex align-items-center">
-                                            <img class="img-xs" src="{{ asset('images/' . $task->img) }}" alt="coin image">
-                                            <div class="ml-10">
-                                                <h3 class="coin-name">{{ $task->title }}</h3>
-                                                <small class="text-muted">${{ $task->price }}</small>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <small class="d-block mb-0 txt-green"><i
-                                                    class="txt-green fa fa-arrow-up mr-10 mb-5"></i>{{ $task->rate }}%</small>
-                                            <small class="text-muted d-block">{{ $task->created_at }}</small>
-                                        </div>
-                                    </div>
+                        <div class="resources-card-wrapper">
+                            <div class="wallet-card mr-10 round">
+                                <div class="flex-column flex-md-row">
+                                    <img src="{{ asset('images/'.$task->img) }}" height="200px" width="200px" alt="">
+                                    <h3 class="">For: {{ $task->level }}</h3>
+                                    <p class="mb-0 font-weight-medium">Price: {{ $task->price }}$</p>
+                                    <p>Success Rate: {{ $task->rate }}%</p>
+                                    <a href="#" class="btn btn-success">Complete Now</a>
                                 </div>
-                            </section>
+                            </div>
+                        </div>
                         @endforeach
                     </div>
                     <div class="content-item" id="completed">
                         @foreach ($tasks as $task)
-                            <section class="mt-15 mb-15 container">
-                                <div class="coin-box">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div class="d-flex align-items-center">
-                                            <img class="img-xs" src="{{ asset('images/' . $task->img) }}" alt="coin image">
-                                            <div class="ml-10">
-                                                <h3 class="coin-name">{{ $task->title }}</h3>
-                                                <small class="text-muted">${{ $task->price }}</small>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <small class="d-block mb-0 txt-green"><i
-                                                    class="txt-green fa fa-arrow-up mr-10 mb-5"></i>{{ $task->rate }}%</small>
-                                            <small class="text-muted d-block">{{ $task->created_at }}</small>
-                                        </div>
-                                    </div>
+                        <div class="resources-card-wrapper">
+                            <div class="wallet-card mr-10 round">
+                                <div class="flex-column flex-md-row">
+                                    <img src="{{ asset('images/'.$task->img) }}" height="200px" width="200px" alt="">
+                                    <h3 class="">For: {{ $task->level }}</h3>
+                                    <p class="mb-0 font-weight-medium">Price: {{ $task->price }}$</p>
+                                    <p>Success Rate: {{ $task->rate }}%</p>
+                                    <a href="#" class="btn btn-success">Completed</a>
                                 </div>
-                            </section>
+                            </div>
+                        </div>
                         @endforeach
                     </div>
                 </div>

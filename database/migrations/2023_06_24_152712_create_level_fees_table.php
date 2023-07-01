@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('level_fees', function (Blueprint $table) {
             $table->id();
             $table->string('user_id');
+            $table->string('level_id');
             $table->string('user_name');
             $table->string('level');
             $table->string('trxId');

@@ -18,8 +18,7 @@
 
                     </div>
                     <div class="ml-auto align-self-end">
-                        <a href="#" class="profile-av"><img
-                                src="{{ asset('assets/img/content/avatar/avatar.png') }}"></a>
+                        <h3 class="text-white">{{ auth()->user()->level }}</h3>
                     </div>
                 </div>
             </div>

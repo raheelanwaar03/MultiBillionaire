@@ -37,7 +37,7 @@ class UserDashboardController extends Controller
 
     public function performTask()
     {
-        $tasks = task::get();
+        $tasks = task::where('level',auth()->user()->level)->get();
         return view('LandingPage.user.task', compact('tasks'));
     }
 
@@ -71,6 +71,7 @@ class UserDashboardController extends Controller
 
         $levelFees = new levelFees();
         $levelFees->user_id = auth()->user()->id;
+        $levelFees->level_id = $id;
         $levelFees->user_name = auth()->user()->name;
         $levelFees->level = $levelName;
         $levelFees->trxId = $validated['trxId'];
