@@ -85,37 +85,37 @@ class clean extends Command
         $level->totalProfit = '900';
         $level->save();
 
-        // $level = new level();
-        // $level->level = 'level 7';
-        // $level->invest = '980';
-        // $level->dailyProfit = '35';
-        // $level->duration = '45';
-        // $level->totalProfit = '1575';
-        // $level->save();
+        $level = new level();
+        $level->level = 'level 7';
+        $level->invest = '980';
+        $level->dailyProfit = '35';
+        $level->duration = '45';
+        $level->totalProfit = '1575';
+        $level->save();
 
-        // $level = new level();
-        // $level->level = 'level 8';
-        // $level->invest = '1620';
-        // $level->dailyProfit = '60';
-        // $level->duration = '45';
-        // $level->totalProfit = '2700';
-        // $level->save();
+        $level = new level();
+        $level->level = 'level 8';
+        $level->invest = '1620';
+        $level->dailyProfit = '60';
+        $level->duration = '45';
+        $level->totalProfit = '2700';
+        $level->save();
 
-        // $level = new level();
-        // $level->level = 'level 9';
-        // $level->invest = '2860';
-        // $level->dailyProfit = '100';
-        // $level->duration = '45';
-        // $level->totalProfit = '4500';
-        // $level->save();
+        $level = new level();
+        $level->level = 'level 9';
+        $level->invest = '2860';
+        $level->dailyProfit = '100';
+        $level->duration = '45';
+        $level->totalProfit = '4500';
+        $level->save();
 
-        // $level = new level();
-        // $level->level = 'level 10';
-        // $level->invest = '4400';
-        // $level->dailyProfit = '160';
-        // $level->duration = '45';
-        // $level->totalProfit = '7200';
-        // $level->save();
+        $level = new level();
+        $level->level = 'level 10';
+        $level->invest = '4400';
+        $level->dailyProfit = '160';
+        $level->duration = '45';
+        $level->totalProfit = '7200';
+        $level->save();
 
         // inserting users
 
