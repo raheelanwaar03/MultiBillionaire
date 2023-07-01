@@ -13,7 +13,7 @@ Route::get('/',[LandingPageController::class,'index'])->name('LandingPage');
 
 // User Routes
 
-Route::name('User.')->prefix('User')->middleware('user','auth')->group(function(){
+Route::name('User.')->prefix('User')->middleware('user','auth','status')->group(function(){
 
     Route::get('/Widthraw',[WidthrawBalanceController::class,'widthraw'])->name('Widthraw.Page');
     Route::post('/Widthraw/Request',[WidthrawBalanceController::class,'widthrawRequest'])->name('Widthraw.Request');

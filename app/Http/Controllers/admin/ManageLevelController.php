@@ -12,7 +12,7 @@ class ManageLevelController extends Controller
 {
     public function index()
     {
-        $levelRequests = levelFees::where('status','pending')->get();
+        $levelRequests = levelFees::where('status', 'pending')->get();
         return view('admin.level.index', compact('levelRequests'));
     }
 
@@ -21,17 +21,31 @@ class ManageLevelController extends Controller
         $level = levelFees::where('user_id', $user_id)->first();
         $level->status = 'unlock';
         $level->save();
+        // getting level investment
+        $levelName = $level->level;
+        $levelInvestment = Level::where('level', $levelName)->first();
+        $levelInvestment = $levelInvestment->invest;
+        $level_commission = $levelInvestment * 5 / 100;
+        // Giving user new Level
         $userLevel = $level->level;
         $user = User::find($user_id);
         $user->level = $userLevel;
         $user->save();
+        // fetching user referal
+        $referal = $user->referal;
+        if($referal !== 'default')
+        {
+            $user = User::where('email', $referal)->first();
+            $user->balance += $level_commission;
+            $user->save();
+        }
+
         return redirect()->back()->with('success', 'User Level Unlock Successfully');
     }
 
     public function unlocked()
     {
-        $levelRequests = levelFees::where('status','unlock')->get();
-        return view('admin.level.unlock',compact('levelRequests'));
+        $levelRequests = levelFees::where('status', 'unlock')->get();
+        return view('admin.level.unlock', compact('levelRequests'));
     }
-
 }

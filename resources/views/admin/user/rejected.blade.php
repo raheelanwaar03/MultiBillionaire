@@ -33,11 +33,11 @@
                                                 <td>{{ $user->status }}</td>
                                                 <td>{{ $user->created_at }}</td>
                                                 <td>
-                                                    <a href="{{ route('Admin.Make.Users.Approved', ['id' => $user->id]) }}"
-                                                        class="btn btn-sm btn-success">Approved</a>
-                                                    <a href="{{ route('Admin.Make.Users.Rejected', ['id' => $user->id]) }}"
-                                                        class="btn btn-sm btn-danger">Rejected</a>
-                                                    <a href="{{ route('Admin.Make.Users.Pending', ['id' => $user->id]) }}"
+                                                    <a href="{{ route('Admin.Make.User.Approved', ['id' => $user->id]) }}"
+                                                        class="btn btn-sm btn-success">Approve</a>
+                                                        <a href="{{ route('Admin.Make.User.Rejected', ['id' => $user->id]) }}"
+                                                            class="btn btn-sm btn-danger">Rejectd</a>
+                                                    <a href="{{ route('Admin.Make.User.Pending', ['id' => $user->id]) }}"
                                                         class="btn btn-sm btn-warning">Pending</a>
                                                 </td>
                                             </tr>

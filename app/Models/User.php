@@ -21,7 +21,7 @@ class User extends Authenticatable
         'name',
         'level',
         'balance',
-        'balance',
+        'referal',
         'pin',
         'status',
         'role',

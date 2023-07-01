@@ -64,8 +64,8 @@
                         <div class="form-row-group relative">
                             <div class="form-row no-padding">
                                 <input type="text" class="form-control"
-                                    value="{{ route('register', ['referal' => Auth::user()->email]) }}" style="color:black" id="myInput"
-                                    readonly>
+                                    value="{{ route('register', ['referal' => auth()->user()->email]) }}" style="color:black"
+                                    id="myInput" readonly>
                                 <a onclick="copy()" class="ref-copy"><i class="fa fa-copy"></i></a>
                             </div>
                         </div>
@@ -74,34 +74,6 @@
             </div>
         </section>
     </main>
-    {{-- <div class="table-responsive">
-        <table id="example" class="display" style="min-width: 845px">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Balance</th>
-                    <th>Status</th>
-                    <th>Date</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($users as $user)
-                    <tr>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
-                        <td>{{ $user->balance }}</td>
-                        <td>{{ $user->status }}</td>
-                        <td>{{ $user->created_at }}</td>
-                        <td>
-
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div> --}}
     <script>
         function copy() {
             // Get the text field
