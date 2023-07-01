@@ -6,7 +6,9 @@ use App\Models\admin\task;
 use App\Models\level;
 use App\Models\User;
 use App\Models\user\levelFees;
+use App\Models\user\vistors;
 use App\Models\user\WidthrawBalance;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class UserDashboardController extends Controller
@@ -37,7 +39,7 @@ class UserDashboardController extends Controller
 
     public function performTask()
     {
-        $tasks = task::where('level',auth()->user()->level)->get();
+        $tasks = task::where('level', auth()->user()->level)->get();
         return view('LandingPage.user.task', compact('tasks'));
     }
 
@@ -118,5 +120,33 @@ class UserDashboardController extends Controller
         $user->pin = $validated['pin_confirmation'];
         $user->save();
         return redirect()->back()->with('success', 'Security Pin Updated successfully');
+    }
+
+    public function doTask($id)
+    {
+        $task = task::find($id);
+        $commission = $task->price;
+
+        // Storing in vistors
+
+        $vistor = vistors::where('user_id',auth()->user()->id)->where('product_id',$id)->whereDate('created_at','=',Carbon::today())->first();
+
+        if(!$vistor)
+        {
+            $vistor = new vistors();
+            $vistor->user_id = auth()->user()->id;
+            $vistor->product_id = $id;
+            $vistor->save();
+            // giving reward
+
+            $user = User::where('id', auth()->user()->id)->first();
+            $user->balance += $commission;
+            $user->save();
+            return redirect()->back()->with('success', 'Task compeleted successfully');
+
+        }
+
+        return redirect()->back()->with('error', 'You have been compeleted this task before!');
+
     }
 }

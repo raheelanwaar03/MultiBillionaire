@@ -20,7 +20,7 @@
                                             <th>Title</th>
                                             <th>price</th>
                                             <th>rate</th>
-                                            <th>Status</th>
+                                            <th>Image</th>
                                             <th>Date</th>
                                             <th>Action</th>
                                         </tr>
@@ -31,10 +31,13 @@
                                                 <td>{{ $task->title }}</td>
                                                 <td>{{ $task->price }}</td>
                                                 <td>{{ $task->rate }}</td>
-                                                <td>{{ $task->status }}</td>
+                                                <td>
+                                                    <img src="{{ asset('images/' . $task->img) }}" alt="Image"
+                                                        class="img-responsive" height="60px" width="60px">
+                                                </td>
                                                 <td>{{ $task->created_at }}</td>
                                                 <td>
-                                                    <a href="{{ route('Admin.Delete.Task',['id'=>$task->id]) }}"
+                                                    <a href="{{ route('Admin.Delete.Task', ['id' => $task->id]) }}"
                                                         class="btn btn-sm btn-danger">Delelte</a>
                                                 </td>
                                             </tr>
