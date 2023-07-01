@@ -18,8 +18,8 @@ class TaskController extends Controller
         $validated = $request->validate([
             'title' => 'required',
             'price' => 'required',
-            'commission' => 'required',
             'rate' => 'required',
+            'level' => 'required',
             'img' => 'required',
         ]);
 
@@ -30,8 +30,8 @@ class TaskController extends Controller
         $task = new task();
         $task->title = $validated['title'];
         $task->price = $validated['price'];
-        $task->commission = $validated['commission'];
         $task->rate = $validated['rate'];
+        $task->level = $validated['level'];
         $task->img = $imageName;
         $task->save();
         return redirect()->route('Admin.All.Task')->with('success','Task added successfully');

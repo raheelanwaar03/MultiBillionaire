@@ -26,12 +26,11 @@
                                             placeholder="Price">
                                     </div>
                                     <div class="mb-3">
-                                        <input type="number" name="commission" class="form-control input-rounded"
-                                            placeholder="Commission">
-                                    </div>
-                                    <div class="mb-3">
                                         <input type="text" name="rate" class="form-control input-rounded"
                                             placeholder="Earnings rate">
+                                    </div><div class="mb-3">
+                                        <input type="text" name="level" class="form-control input-rounded"
+                                            placeholder="Level">
                                     </div>
                                     <div class="mb-3">
                                         <input type="file" name="img" class="form-control input-rounded">

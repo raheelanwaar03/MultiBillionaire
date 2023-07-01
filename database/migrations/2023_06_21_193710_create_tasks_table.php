@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('price');
-            $table->string('commission');
             $table->string('rate');
+            $table->string('level');
             $table->string('img');
             $table->string('status')->default('pending');
             $table->timestamps();
