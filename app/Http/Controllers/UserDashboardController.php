@@ -154,41 +154,43 @@ class UserDashboardController extends Controller
         $luck = Luck::first();
         $currentDate = Carbon::now();
         $lucks = Luck::get();
-        return view('LandingPage.user.luck', compact('lucks','luck','currentDate'));
+        return view('LandingPage.user.luck', compact('lucks', 'luck', 'currentDate'));
     }
 
     public function tryLuck($id)
     {
         $luck = Luck::find($id);
-        $price = $luck->price;
-        $user = User::where('id',auth()->user()->id)->where('status','approved')->first();
+        return view('LandingPage.user.luckFees', compact('luck'));
+    }
 
-        if ($user->balance < $price)
-        {
-            return redirect()->back()->with('error','You have not enough balance');
-        }
+    public function winer()
+    {
+        $user = luckyPersons::where('status', 'winner')->first();
+        $luck_id = $user->luck_id;
+        $luck = luck::where('id', $luck_id)->first();
+        return view('LandingPage.user.winer', compact('user', 'luck'));
+    }
 
-        $user->balance -= $price;
-        $user->save();
+    public function luckyInvestors(Request $request, $id)
+    {
+        $validated = $request->validate([
+            'trx_id' => 'required',
+            'image' => 'required'
+        ]);
+
+        $image = $validated['image'];
+        $imageName = rand(111111, 999999) . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('images'), $imageName);
 
         $luckyPerson = new luckyPersons();
         $luckyPerson->user_id = auth()->user()->id;
         $luckyPerson->name = auth()->user()->name;
         $luckyPerson->email = auth()->user()->email;
         $luckyPerson->luck_id = $id;
+        $luckyPerson->trx_id = $validated['trx_id'];
+        $luckyPerson->image = $image_name;
         $luckyPerson->save();
 
-        return redirect()->back()->with('success','You have been participated in this campaign successfully!');
-
+        return redirect()->back()->with('success', 'You have been participated in this campaign successfully!');
     }
-
-    public function winer()
-    {
-        $user = luckyPersons::where('status','winner')->first();
-        $luck_id = $user->luck_id;
-        $luck = luck::where('id',$luck_id)->first();
-        return view('LandingPage.user.winer',compact('user','luck'));
-    }
-
-
 }

@@ -19,6 +19,8 @@
                                         <tr>
                                             <th>Name</th>
                                             <th>Email</th>
+                                            <th>Trx Id</th>
+                                            <th>Image</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -26,6 +28,12 @@
                                             <tr>
                                                 <td>{{ $user->name }}</td>
                                                 <td>{{ $user->email }}</td>
+                                                <td>{{ $user->trx_id }}</td>
+                                                <td>
+                                                    <img src="{{ asset('images/' . $user->img) }}"
+                                                        class="img-thubnail img-responsive" height="80px" width="80px"
+                                                        alt="Image">
+                                                </td>
                                             </tr>
                                         @endforeach
                                     </tbody>
