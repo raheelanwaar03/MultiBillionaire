@@ -29,15 +29,21 @@
                 <h4 class="title-main mt-0 ">Winer</h4>
             </div>
             <div class="container mb-5 mt-3">
+                @if ($user == '')
+                    <div>
+                        <h3>Winner will annouce after 30 days.</h3>
+                    </div>
+                @else
                 <div class="col-sm-12 d-flex justify-content-center align-items-center mb-5">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="{{ asset('images/' . $luck->image) }}" height="120px"
-                                alt="image cap">
-                            <div class="card-body">
-                                <h3 class="card-title">Winner Name: {{ $user->name }}</h3>
-                            </div>
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{ asset('images/' . $luck->image) }}" height="120px"
+                            alt="image cap">
+                        <div class="card-body">
+                            <h3 class="card-title">Winner Name: {{ $user->name }}</h3>
                         </div>
+                    </div>
                 </div>
+                @endif
             </div>
         </section>
     </main>

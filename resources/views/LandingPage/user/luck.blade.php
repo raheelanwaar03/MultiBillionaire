@@ -27,7 +27,11 @@
         <section class="trans-sec container mb-5">
             <div class="d-flex justify-content-between align-items-center">
                 <h4 class="title-main mt-0 ">Luck</h4>
+                @if ($luck->created_at->diffInDays($currentDate) >= 30)
                 <a href="{{ route('User.See.Winer') }}" class="btn btn-warning text-white">See Winner</a>
+                @else
+                <p>Winner will annouce after 30 days</p>
+                @endif
                 <h4 class="title-main mt-0 ">Total Pariticipated: {{ participated() }}</h4>
             </div>
             <div class="container mb-5 mt-3">
