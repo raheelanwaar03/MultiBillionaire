@@ -105,7 +105,7 @@
                                         <img src="{{ asset('assets/img/whatsUp.png') }}" alt="img" height="40px"
                                             width="40px">
                                     </div>
-                                    <h5 class="text-decoration-none text-center">Gruop link</h5>
+                                    <h5 class="text-decoration-none text-center">Group link</h5>
                                 </div>
                             </div>
                         </a>
