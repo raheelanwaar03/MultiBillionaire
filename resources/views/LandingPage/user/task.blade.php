@@ -14,49 +14,43 @@
                             <h1 class="b-val"> $0.0 </h1>
                             <p class="g-text mb-0">Total Balance</p>
                         @endif
-                    </div>
-                    <div class="">
-                        <img src="{{ asset('assets/baner.png') }}" alt="banner" height="100px" width="100px"
-                            class="img-responsive">
+
                     </div>
                     <div class="ml-auto align-self-end">
-                        @if (auth()->user())
-                            <h3 class="text-white">{{ auth()->user()->level }}</h3>
-                        @else
-                            <h3 class="text-white">level 0</h3>
-                        @endif
+                        <h3 class="text-white">{{ auth()->user()->level }}</h3>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <section class="container">
-                <div class="tab-item">
-                    <div class="tab-menu fix-width">
-                        <a class="menu-item active" href="javascript:void(0);" data-content="pending"
-                            style="width: 50%;">Processing</a>
-                        <a class="menu-item" href="javascript:void(0);" data-content="completed"
-                            style="width: 50%;">Completed</a>
-                    </div>
-                    <div class="tab-content pb-5">
-                        @foreach ($tasks as $task)
-                            <div class="content-item active pb-5" id="{{ $task->status }}">
-                                <div class="resources-card-wrapper">
-                                    <div class="wallet-card mr-10 round">
-                                        <div class="flex-column flex-md-row">
-                                            <img src="{{ asset('images/' . $task->img) }}" height="120px" width="120px"
-                                                alt="">
-                                            <h3 class="">For: {{ $task->level }}</h3>
-                                            <p class="mb-0 font-weight-medium">Price: {{ $task->price }}$</p>
-                                            <p>Success Rate: {{ $task->rate }}%</p>
-                                            <a href="{{ route('User.Do.Task', ['id' => $task->id]) }}"
-                                                class="btn btn-success">Complete Now</a>
-                                        </div>
+        <section class="container">
+            <div class="tab-item">
+                <div class="tab-menu fix-width">
+                    <a class="menu-item active" href="javascript:void(0);" data-content="pending"
+                        style="width: 50%;">Processing</a>
+                    <a class="menu-item" href="javascript:void(0);" data-content="completed"
+                        style="width: 50%;">Completed</a>
+                </div>
+                <div class="tab-content pb-5">
+                    @foreach ($tasks as $task)
+                        <div class="content-item active pb-5" id="{{ $task->status }}">
+                            <div class="resources-card-wrapper">
+                                <div class="wallet-card mr-10 round">
+                                    <div class="flex-column flex-md-row">
+                                        <img src="{{ asset('images/' . $task->img) }}" height="120px" width="120px"
+                                            alt="">
+                                        <h3 class="">For: {{ $task->level }}</h3>
+                                        <p class="mb-0 font-weight-medium">Price: {{ $task->price }}$</p>
+                                        <p>Success Rate: {{ $task->rate }}%</p>
+                                        <a href="{{ route('User.Do.Task', ['id' => $task->id]) }}"
+                                            class="btn btn-success">Complete Now</a>
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
-                    </div>
+                        </div>
+                    @endforeach
                 </div>
-            </section>
+            </div>
+        </section>
     </main>
 @endsection

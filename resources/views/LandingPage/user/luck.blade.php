@@ -16,18 +16,12 @@
                             <p class="g-text mb-0">Total Balance</p>
                         @endif
                     </div>
-                    <div class="">
-                        <img src="{{ asset('assets/baner.png') }}" alt="banner" height="100px" width="100px" class="img-responsive">
-                    </div>
                     <div class="ml-auto align-self-end">
-                        @if (auth()->user())
-                            <h3 class="text-white">{{ auth()->user()->level }}</h3>
-                        @else
-                            <h3 class="text-white">level 0</h3>
-                        @endif
+                        <h3 class="text-white">{{ auth()->user()->level }}</h3>
                     </div>
                 </div>
             </div>
+        </div>
 
         <section class="trans-sec container mb-5">
             <div class="d-flex justify-content-between align-items-center">
