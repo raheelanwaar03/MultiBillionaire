@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('pin');
             $table->string('level')->default('level 0');
             $table->string('referal')->default('default');
-            $table->string('status')->default('pending');
+            $table->string('status')->default('approved');
             $table->string('role')->default('user');
             $table->string('password');
             $table->timestamp('email_verified_at')->nullable();
