@@ -5,10 +5,29 @@
     <main class="margin mt-0">
 
         <div class="dash-balance">
-            <div class="dash-content relative">
-                <h3 class="w-text">Try Your Luck</h3>
+            <div class="d-flex align-items-center mt-30">
+                <div class="d-flex flex-grow">
+                    <div class="mr-auto">
+                        @if (auth()->user())
+                            <h1 class="b-val"> ${{ auth()->user()->balance }} </h1>
+                            <p class="g-text mb-0">Total Balance</p>
+                        @else
+                            <h1 class="b-val"> $0.0 </h1>
+                            <p class="g-text mb-0">Total Balance</p>
+                        @endif
+                    </div>
+                    <div class="">
+                        <img src="{{ asset('assets/baner.png') }}" alt="banner" height="100px" width="100px" class="img-responsive">
+                    </div>
+                    <div class="ml-auto align-self-end">
+                        @if (auth()->user())
+                            <h3 class="text-white">{{ auth()->user()->level }}</h3>
+                        @else
+                            <h3 class="text-white">level 0</h3>
+                        @endif
+                    </div>
+                </div>
             </div>
-        </div>
 
         <section class="wallets-list container">
             <h4 class="title-main">Cryptocoins Wallets</h4>

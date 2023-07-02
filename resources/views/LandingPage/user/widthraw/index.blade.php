@@ -15,7 +15,9 @@
                             <h1 class="b-val"> $0.0 </h1>
                             <p class="g-text mb-0">Total Balance</p>
                         @endif
-
+                    </div>
+                    <div class="">
+                        <img src="{{ asset('assets/baner.png') }}" alt="banner" height="100px" width="100px" class="img-responsive">
                     </div>
                     <div class="ml-auto align-self-end">
                         @if (auth()->user())
