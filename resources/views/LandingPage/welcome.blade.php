@@ -17,7 +17,7 @@
                         @endif
                     </div>
                     <div class="">
-                        <img src="{{ asset('assets/img/dollar.jpg') }}" alt="Logo" height="100px" width="100px" class="img-responsive">
+                        <img src="{{ asset('assets/baner.png') }}" alt="banner" height="100px" width="100px" class="img-responsive">
                     </div>
                     <div class="ml-auto align-self-end">
                         @if (auth()->user())
