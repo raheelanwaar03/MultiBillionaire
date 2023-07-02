@@ -39,7 +39,7 @@
     <div id="main-wrapper">
         <div class="nav-header">
             <a href="{{ route('Admin.Dashbaord') }}" class="brand-logo">
-                <img src="{{ asset('admin/images/logo.png') }}" alt="Logo" width="60px" height="60px">
+                <img src="{{ asset('assets/img/logo.png') }}" alt="Logo" width="60px" height="60px">
             </a>
             <div class="nav-control">
                 <div class="hamburger">

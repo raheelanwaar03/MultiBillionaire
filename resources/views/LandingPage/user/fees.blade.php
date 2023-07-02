@@ -34,7 +34,7 @@
                                     <a onclick="copy()" class="ref-copy pr-4" style="border-radius:10px;"><i class="fa fa-copy"></i></a>
                                 </div>
                             </div>
-                            <img src="{{ asset('assets/img/content/qr.png') }}" alt="" class="mt-15">
+                            <img src="{{ asset('assets/img/content/qr.jpeg') }}" alt="" class="mt-15">
                             <h4>You have to pay {{$level->invest}}$ for unlock {{ $level->level }}</h4>
                             <p class="g-text mb-0">Enter TRX Id and Screen shot of the payment you have sended for unlocking {{ $level->level }}</p>
                         </div>
