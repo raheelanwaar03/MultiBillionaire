@@ -56,5 +56,6 @@ Route::name('Admin.')->prefix('Admin')->middleware('admin','auth')->group(functi
     Route::get('/Delete/Luck/{id}',[LuckController::class,'delete'])->name('Delete.Luck');
     Route::get('/All/Insvestors',[LuckController::class,'allInvestors'])->name('All.Investors');
     Route::get('/Chosse/One/Lucky/Person',[LuckController::class,'luckyPerson'])->name('Lucky.Person');
+    Route::get('/Add/User/In/Luck/{id}',[LuckController::class,'addInLuck'])->name('Add.In.Lucky');
 
 });

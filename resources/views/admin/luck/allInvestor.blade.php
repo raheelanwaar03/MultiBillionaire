@@ -21,6 +21,7 @@
                                             <th>Email</th>
                                             <th>Trx Id</th>
                                             <th>Image</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -33,6 +34,10 @@
                                                     <img src="{{ asset('images/' . $user->img) }}"
                                                         class="img-thubnail img-responsive" height="80px" width="80px"
                                                         alt="Image">
+                                                </td>
+                                                <td>
+                                                    <a href="{{ route('Admin.Add.In.Lucky', ['id' => $user->id]) }}"
+                                                        class="btn btn-sm btn-primary">Approve</a>
                                                 </td>
                                             </tr>
                                         @endforeach

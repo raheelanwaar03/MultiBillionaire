@@ -56,10 +56,18 @@ class LuckController extends Controller
 
     public function luckyPerson()
     {
-        $user = luckyPersons::inRandomOrder()->first();
+        $user = luckyPersons::where('status','approved')->inRandomOrder()->first();
         $user->status = 'winner';
         $user->save();
         return view('admin.luck.winer',compact('user'));
+    }
+
+    public function addInLuck($id)
+    {
+        $user = luckyPersons::find($id);
+        $user->status = 'approved';
+        $user->save();
+        return redirect()->back()->with('success','The user is entered in lucky draw');
     }
 
 
