@@ -10,7 +10,7 @@
             </div>
         </div>
 
-        <section class="wallets-list container">
+        <section class="wallets-list container pb-5">
             <h4 class="title-main">Cryptocoins Wallets</h4>
             <!--expendable list item -->
             <div class="expandable-item accordion active" data-group="accordion1">
@@ -34,7 +34,7 @@
                                     <a onclick="copy()" class="ref-copy pr-4" style="border-radius:10px;"><i class="fa fa-copy"></i></a>
                                 </div>
                             </div>
-                            <img src="{{ asset('assets/img/content/qr.jpeg') }}" alt="" class="mt-15">
+                            <img src="{{ asset('assets/img/content/qr.jpeg') }}" height="250px" width="250px" class="mt-15">
                             <h4>You have to pay {{$level->invest}}$ for unlock {{ $level->level }}</h4>
                             <p class="g-text mb-0">Enter TRX Id and Screen shot of the payment you have sended for unlocking {{ $level->level }}</p>
                         </div>

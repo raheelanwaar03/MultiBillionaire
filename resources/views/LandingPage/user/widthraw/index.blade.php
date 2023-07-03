@@ -36,7 +36,7 @@
                         <div class="card-body">
                             <p>You can widthraw minimum 10$ per day with widthrawal fees of 10%. If your widthraw faild
                                 please check your giving details again and your approve widthraw will be in your wallet
-                                withing
+                                within
                                 working 20 hrs.</p>
                         </div>
                     </div>
@@ -45,12 +45,12 @@
         </div>
 
         <section class="trans-sec container">
-            <div class="container pb-5">
+            <div class="container pb-5 mb-5">
                 <div class="row">
                     <div class="col-md-8 mx-auto">
                         <div class="card">
                             <div class="card-title text-center">
-                                <h2 style="color: #ffdb08">Widthraw Balance</h2>
+                                <h2 style="color: #ffdb08">Widthrawal Balance</h2>
                             </div>
                             <div class="card-body">
                                 <form action="{{ route('User.Widthraw.Request') }}" method="POST">
@@ -61,9 +61,9 @@
                                             placeholder="Enter your account title" style="color: black">
                                     </div>
                                     <div class="form-group">
-                                        <label for=""><b>Widthraw Amount</b></label>
+                                        <label for=""><b>Widthrawal Amount</b></label>
                                         <input type="number" name="amount" class="form-control"
-                                            placeholder="Enter amount you want to widthraw" style="color: black">
+                                            placeholder="Enter amount you want to widthrawal" style="color: black">
                                     </div>
                                     <div class="form-group">
                                         <label for=""><b>Wallet Address</b></label>

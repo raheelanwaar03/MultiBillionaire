@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <main class="margin mt-0">
+    <main class="margin mt-0 pb-5">
 
         <div class="dash-balance">
             <div class="dash-content relative">
@@ -42,7 +42,7 @@
             </div>
         </section>
 
-        <section class="container refer mb-5">
+        <section class="container refer pb-5 mb-5">
             <div id="cont">
                 <div id="content-body">
                     <div class="content-head purp">

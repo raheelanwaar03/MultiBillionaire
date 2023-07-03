@@ -10,7 +10,7 @@
             </div>
         </div>
 
-        <section class="wallets-list container">
+        <section class="wallets-list container pb-5">
             <h4 class="title-main">Cryptocoins Wallets</h4>
             <!--expendable list item -->
             <div class="expandable-item accordion active" data-group="accordion1">
@@ -30,13 +30,16 @@
                                     value="{{ route('register', ['referal' => Auth::user()->email]) }}" id="myInput"
                                     readonly> --}}
                                     <input type="text" name="aaa" id="myInput" class="form-element"
-                                    value="TGMWTRrTDc7LjQe6gFzu1gtNENsbgRRvF4" readonly>
-                                    <a onclick="copy()" class="ref-copy pr-4" style="border-radius:10px;"><i class="fa fa-copy"></i></a>
+                                        value="TGMWTRrTDc7LjQe6gFzu1gtNENsbgRRvF4" readonly>
+                                    <a onclick="copy()" class="ref-copy pr-4" style="border-radius:10px;"><i
+                                            class="fa fa-copy"></i></a>
                                 </div>
                             </div>
-                            <img src="{{ asset('assets/img/content/qr.jpeg') }}" alt="" class="mt-15">
-                            <h4>You have to pay {{$luck->price}}$ for participate in this campaign.</h4>
-                            <p class="g-text mb-0">Enter TRX Id and Screen shot of the payment you have sended for {{ $luck->title }}</p>
+                            <img src="{{ asset('assets/img/content/qr.jpeg') }}" alt="" height="250px"
+                                width="250px" class="mt-15">
+                            <h4>You have to pay {{ $luck->price }}$ for participate in this campaign.</h4>
+                            <p class="g-text mb-0">Enter TRX Id and Screen shot of the payment you have sended for
+                                {{ $luck->title }}</p>
                         </div>
                     </div>
                     <div class="card active">
@@ -44,7 +47,8 @@
                             <h4 class="text-center">Enter Details and Submit</h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('User.Lucky.Investors',['id'=>$luck->id]) }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('User.Lucky.Investors', ['id' => $luck->id]) }}" method="POST"
+                                enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-gorup">
                                     <label for="">TRX ID</label>
