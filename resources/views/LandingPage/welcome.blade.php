@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Page content start -->
-    <main class="margin mt-0 pb-5">
+    <main class="margin mt-0 mb-5 pb-5">
 
         <div class="dash-balance">
             <div class="d-flex align-items-center mt-30">
@@ -17,7 +17,8 @@
                         @endif
                     </div>
                     <div class="">
-                        <img src="{{ asset('assets/baner.png') }}" alt="banner" height="100px" width="100px" class="img-responsive">
+                        <img src="{{ asset('assets/baner.png') }}" alt="banner" height="100px" width="100px"
+                            class="img-responsive">
                     </div>
                     <div class="ml-auto align-self-end">
                         @if (auth()->user())
