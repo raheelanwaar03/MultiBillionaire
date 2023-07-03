@@ -22,7 +22,7 @@
                                             placeholder="Title">
                                     </div>
                                     <div class="mb-3">
-                                        <input type="number" name="price" class="form-control input-rounded"
+                                        <input type="number" name="price" step="0.01" class="form-control input-rounded"
                                             placeholder="Price">
                                     </div>
                                     <div class="mb-3">
