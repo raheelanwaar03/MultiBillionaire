@@ -37,8 +37,8 @@
                                                         class="btn btn-sm btn-success">Approve</a>
                                                     <a href="{{ route('Admin.Make.User.Rejected', ['id' => $user->id]) }}"
                                                         class="btn btn-sm btn-danger">Rejectd</a>
-                                                    <a href="{{ route('Admin.Make.User.Pending', ['id' => $user->id]) }}"
-                                                        class="btn btn-sm btn-warning">Pending</a>
+                                                    <a href="{{ route('Admin.edit.User', ['id' => $user->id]) }}"
+                                                        class="btn btn-sm btn-info">Edit</a>
                                                 </td>
                                             </tr>
                                         @endforeach
