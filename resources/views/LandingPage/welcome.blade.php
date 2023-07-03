@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Page content start -->
-    <main class="margin mt-0">
+    <main class="margin mt-0 pb-5">
 
         <div class="dash-balance">
             <div class="d-flex align-items-center mt-30">

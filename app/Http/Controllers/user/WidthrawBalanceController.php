@@ -32,23 +32,12 @@ class WidthrawBalanceController extends Controller
             return redirect()->back()->with('error', 'Your account is empty');
         }
 
-        if ($validated['amount'] >= 10) {
-            return redirect()->back()->with('error', 'You have not 10% widthrawal fees to request widthraw');
-        }
-
-        // Dedecting Widthrawal Fees and widthrawal amount from user personal balance
-
         $user = User::where('id', auth()->user()->id)->first();
         // checking user pin
         $pin = $user->pin;
         if($pin != $validated['pin']){
             return redirect()->back()->with('error','Please Enter correct Pin');
         }
-        $fees = $validated['amount'] * 10 / 100;
-        $userBalance = $user->balance;
-        $dedectionAmount = $fees + $validated['amount'];
-        $user->balance = $userBalance - $dedectionAmount;
-        $user->save();
 
         $widthraw  = new WidthrawBalance();
         $widthraw->user_id = auth()->user()->id;
