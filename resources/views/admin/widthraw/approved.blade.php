@@ -33,7 +33,7 @@
                                                 <td>{{ $widthraw->status }}</td>
                                                 <td>{{ $widthraw->created_at }}</td>
                                                 <td>
-                                                    <a href="{{ route('Admin.Make.Reject',['id'=>$widthraw->id]) }}"
+                                                    <a href="{{ route('Admin.Make.Rejectd',['id'=>$widthraw->id]) }}"
                                                         class="btn btn-danger">Rejectd</a>
                                                     <a href="{{ route('Admin.Make.Pending',['id'=>$widthraw->id]) }}"
                                                         class="btn btn-warning">Pending</a>
