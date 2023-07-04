@@ -28,8 +28,6 @@
                 <div class="tab-menu fix-width">
                     <a class="menu-item active" href="javascript:void(0);" data-content="pending"
                         style="width: 50%;">Processing</a>
-                    <a class="menu-item" href="javascript:void(0);" data-content="completed"
-                        style="width: 50%;">Completed</a>
                 </div>
                 <div class="tab-content pb-5">
                     @foreach ($tasks as $task)
