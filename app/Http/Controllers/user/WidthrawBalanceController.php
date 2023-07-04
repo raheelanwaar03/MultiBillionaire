@@ -32,12 +32,24 @@ class WidthrawBalanceController extends Controller
             return redirect()->back()->with('error', 'Your account is empty');
         }
 
+         // checking user 10 $
+        if ($validated['amount'] <= 10) {
+            return redirect()->back()->with('error', 'You can not widthrawal less than 10$');
+        }
+
+
         $user = User::where('id', auth()->user()->id)->first();
         // checking user pin
         $pin = $user->pin;
         if($pin != $validated['pin']){
             return redirect()->back()->with('error','Please Enter correct Pin');
         }
+        // Dedecting user balance
+        $user = User::where('id',auth()->user()->id)->first();
+        $userBalance = $user->balance;
+        $userBalance = $userBalance - $validated['amount'];
+        $user->balance = $userBalance;
+        $user->save();
 
         $widthraw  = new WidthrawBalance();
         $widthraw->user_id = auth()->user()->id;

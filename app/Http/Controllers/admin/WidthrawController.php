@@ -46,12 +46,6 @@ class WidthrawController extends Controller
         $widthraw = WidthrawBalance::find($id);
         $widthraw->status = 'approved';
         $widthraw->save();
-        // dedecting user balance
-        $user = User::where('id', $widthraw->user_id)->first();
-        $totalBalance = $user->balance;
-        $deductedBalance = $totalBalance - $widthraw->widthraw_amount;
-        $user->balance = $deductedBalance;
-        $user->save();
         return redirect()->back()->with('success','Widthraw is approved successfully');
     }
 
@@ -60,6 +54,13 @@ class WidthrawController extends Controller
         $widthraw = WidthrawBalance::find($id);
         $widthraw->status = 'rejected';
         $widthraw->save();
+
+        // Adding user balance again
+        $user = User::where('id', $widthraw->user_id)->first();
+        $totalBalance = $user->balance;
+        $deductedBalance = $totalBalance + $widthraw->widthraw_amount;
+        $user->balance = $deductedBalance;
+        $user->save();
 
         return redirect()->back()->with('success','Widthraw is rejected successfully');
     }
