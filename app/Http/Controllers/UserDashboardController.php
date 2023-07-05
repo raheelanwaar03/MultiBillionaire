@@ -23,7 +23,7 @@ class UserDashboardController extends Controller
 
     public function myFinance()
     {
-        $widthraws = WidthrawBalance::get();
+        $widthraws = WidthrawBalance::where('user_id', auth()->user()->id)->get();
         return view('LandingPage.user.finance', compact('widthraws'));
     }
 
@@ -47,7 +47,7 @@ class UserDashboardController extends Controller
 
     public function levels()
     {
-        $levels = level::get();
+        $levels = level::where('user_id', auth()->user()->id)->get();
         return view('LandingPage.user.levels', compact('levels'));
     }
 
