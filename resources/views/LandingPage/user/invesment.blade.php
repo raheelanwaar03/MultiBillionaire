@@ -18,8 +18,6 @@
 
                     </div>
                     <div class="ml-auto align-self-end">
-                        <a href="#" class="profile-av"><img
-                                src="{{ asset('assets/baner.png') }}"></a>
                     </div>
                 </div>
             </div>
