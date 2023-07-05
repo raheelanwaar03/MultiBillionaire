@@ -30,13 +30,15 @@
                                     value="{{ route('register', ['referal' => Auth::user()->email]) }}" id="myInput"
                                     readonly> --}}
                                     <input type="text" name="aaa" id="myInput" class="form-element"
-                                    value="TGMWTRrTDc7LjQe6gFzu1gtNENsbgRRvF4" readonly>
-                                    <a onclick="copy()" class="ref-copy pr-4" style="border-radius:10px;"><i class="fa fa-copy"></i></a>
+                                        value="TN5pLjYwzbMWRB9wrnKzHaf2QEbbsna7Et" readonly>
+                                    <a onclick="copy()" class="ref-copy pr-4" style="border-radius:10px;"><i
+                                            class="fa fa-copy"></i></a>
                                 </div>
                             </div>
-                            <img src="{{ asset('assets/img/content/qr.jpeg') }}" height="250px" width="250px" class="mt-15">
-                            <h4>You have to pay {{$level->invest}}$ for unlock {{ $level->level }}</h4>
-                            <p class="g-text mb-0">Enter TRX Id and Screen shot of the payment you have sended for unlocking {{ $level->level }}</p>
+                            <img src="{{ asset('assets/img/qr.jpeg') }}" height="250px" width="250px" class="mt-15">
+                            <h4>You have to pay {{ $level->invest }}$ for unlock {{ $level->level }}</h4>
+                            <p class="g-text mb-0">Enter TRX Id and Screen shot of the payment you have sended for unlocking
+                                {{ $level->level }}</p>
                         </div>
                     </div>
                     <div class="card active">
@@ -44,7 +46,8 @@
                             <h4 class="text-center">Enter Details and Submit</h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('User.Level.Fees',['id'=>$level->id]) }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('User.Level.Fees', ['id' => $level->id]) }}" method="POST"
+                                enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-gorup">
                                     <label for="">TRX ID</label>
