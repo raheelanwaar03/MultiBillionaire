@@ -47,7 +47,7 @@ class UserDashboardController extends Controller
 
     public function levels()
     {
-        $levels = level::where('user_id', auth()->user()->id)->get();
+        $levels = level::get();
         return view('LandingPage.user.levels', compact('levels'));
     }
 
