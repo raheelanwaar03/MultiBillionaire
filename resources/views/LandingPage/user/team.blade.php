@@ -14,18 +14,8 @@
                 <div class="d-flex align-items-center">
                     <div class="d-flex flex-grow">
                         <div class="mr-auto">
-                            <h1 class="b-val"> $0.0 </h1>
+                            <h1 class="b-val"> ${{ teamProfit() }}</h1>
                             <p class="g-text mb-10">Total Referal Earnings</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="ref-card c2">
-                <div class="d-flex align-items-center">
-                    <div class="d-flex flex-grow">
-                        <div class="mr-auto">
-                            <h1 class="b-val"> $0.0 </h1>
-                            <p class="g-text mb-10">Pending Earnings</p>
                         </div>
                     </div>
                 </div>
@@ -34,7 +24,7 @@
                 <div class="d-flex align-items-center">
                     <div class="d-flex flex-grow">
                         <div class="mr-auto">
-                            <h1 class="b-val"> $0.0 </h1>
+                            <h1 class="b-val"> ${{ auth()->user()->balance }} </h1>
                             <p class="g-text mb-10">Ready to Payout</p>
                         </div>
                     </div>

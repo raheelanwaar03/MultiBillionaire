@@ -79,14 +79,6 @@ function totalReferal()
     return $totalRefers;
 }
 
-
-function level()
-{
-    $users = User::where('referal', auth()->user()->email)->get();
-    $userRefer = $users->count();
-    return $userRefer;
-}
-
 // getting todays approved user
 
 function todayApprovedWidthraw()
@@ -134,3 +126,12 @@ function participated()
     $participated = luckyPersons::get()->count();
     return $participated;
 }
+
+function teamProfit()
+{
+    $investment = levelFees::where('user_id',auth()->user()->id)->get();
+
+    return $investment;
+
+}
+
