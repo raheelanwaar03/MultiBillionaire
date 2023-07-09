@@ -17,7 +17,7 @@
 
                     </div>
                     <div class="ml-auto align-self-end">
-                        <h3 class="text-white">{{ auth()->user()->level }}</h3>
+                        <h3 class="text-white">{{ $currentTime }}</h3>
                     </div>
                 </div>
             </div>
