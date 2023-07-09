@@ -26,7 +26,7 @@
         </div>
 
         <section class="trans-sec container">
-            <h4 class="title-main mt-0 ">Recent Transactions</h4>
+            <h4 class="title-main mt-0 ">Referal Friends</h4>
             <ul class="transaction-list list-unstyled mb-0">
                 @foreach ($users as $user)
                     <li>
