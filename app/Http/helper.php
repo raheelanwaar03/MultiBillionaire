@@ -130,8 +130,16 @@ function participated()
 function teamProfit()
 {
     $investment = levelFees::where('user_id',auth()->user()->id)->get();
+    $totalInvestment = 0;
+    foreach ($investment as $invest)
+    {
+        $level = $invest->level;
+        $levelPrice = level::where('level',$level)->first();
+        $totalInvestment += $levelPrice->totalProfit;
+    }
 
-    return $investment;
+    $profit = $totalInvestment * 5 /100;
+    return $profit;
 
 }
 
