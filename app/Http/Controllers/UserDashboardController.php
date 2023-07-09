@@ -41,7 +41,7 @@ class UserDashboardController extends Controller
 
     public function performTask()
     {
-        $currentTime = Carbon::now('America/New_York')->format('g:i A');
+        $currentTime = Carbon::now('America/New_York')->format('g:i:s A');
         $tasks = task::where('level', auth()->user()->level)->get();
         return view('LandingPage.user.task', compact('tasks','currentTime'));
     }
