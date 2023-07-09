@@ -129,7 +129,7 @@ function participated()
 
 function teamProfit()
 {
-    $investment = levelFees::where('user_id',auth()->user()->id)->get();
+    $investment = levelFees::where('user_id',auth()->user()->id)->where('status','approved')->get();
     $totalInvestment = 0;
     foreach ($investment as $invest)
     {
