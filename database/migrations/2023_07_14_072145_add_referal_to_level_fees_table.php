@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('level_fees', function (Blueprint $table) {
-            //
+            $table->string('referal');
         });
     }
 

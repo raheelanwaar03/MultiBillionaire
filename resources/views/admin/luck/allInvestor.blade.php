@@ -33,7 +33,7 @@
                                                 <td>
                                                     <img src="{{ asset('images/' . $user->img) }}"
                                                         class="img-thubnail img-responsive" height="80px" width="80px"
-                                                        alt="Image">
+                                                        alt="testing">
                                                 </td>
                                                 <td>
                                                     <a href="{{ route('Admin.Add.In.Lucky', ['id' => $user->id]) }}"
