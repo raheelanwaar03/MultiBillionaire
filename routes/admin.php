@@ -48,6 +48,8 @@ Route::name('Admin.')->prefix('Admin')->middleware('admin','auth')->group(functi
     Route::get('All/Level/Requests',[ManageLevelController::class,'index'])->name('Level.Requests.From.Users');
     Route::get('Unlock/Level/{user_id}',[ManageLevelController::class,'unlock'])->name('Unlock.User.Level');
     Route::get('Unlock/Users',[ManageLevelController::class,'unlocked'])->name('Unlock.Users');
+    Route::get('Rejecte/Level/request/{id}',[ManageLevelController::class,'rejected'])->name('Make.Reject.level');
+    Route::get('All/Rejected/Level',[ManageLevelController::class,'rejectedLevels'])->name('All.Rejected.level');
 
     // luck page
     Route::get('/Add',[LuckController::class,'add'])->name('Add.Luck');

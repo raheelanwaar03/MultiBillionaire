@@ -33,7 +33,7 @@ class ManageLevelController extends Controller
         $user->save();
         // fetching user referal
         $referal = $user->referal;
-        if($referal !== 'default')
+        if($referal != 'default')
         {
             $user = User::where('email', $referal)->first();
             $user->balance += $level_commission;
@@ -48,4 +48,21 @@ class ManageLevelController extends Controller
         $levelRequests = levelFees::where('status', 'unlock')->get();
         return view('admin.level.unlock', compact('levelRequests'));
     }
+
+    public function rejected($id)
+    {
+        $level = levelFees::find($id);
+        $level->status = 'rejected';
+        $level->save();
+        return redirect()->back()->with('success', 'User Level Rejected Successfully');
+
+    }
+
+    public function rejectedLevels()
+    {
+        $levelRequests = levelFees::where('status', 'rejected')->get();
+        return view('admin.level.rejected', compact('levelRequests'));
+    }
+
+
 }

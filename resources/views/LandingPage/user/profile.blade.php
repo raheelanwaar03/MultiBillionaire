@@ -18,7 +18,7 @@
 
             <div class="trader-info">
                 <h3>{{ auth()->user()->name }}</h3>
-                <p>Pakistan</p>
+                <p>Australia</p>
                 <ul class="trader-info-list list-unstyled">
                     <li>
                         <div class="profile1"></div>

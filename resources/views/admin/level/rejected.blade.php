@@ -39,8 +39,6 @@
                                                 <td>
                                                     <a href="{{ route('Admin.Unlock.User.Level', ['user_id' => $level->user_id]) }}"
                                                         class="btn btn-sm btn-primary">Unlock</a>
-                                                    <a href="{{ route('Admin.Make.Reject.level', ['id' => $level->id]) }}"
-                                                        class="btn btn-sm btn-danger">Reject</a>
                                                 </td>
                                             </tr>
                                         @endforeach

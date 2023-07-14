@@ -43,7 +43,7 @@ class UserDashboardController extends Controller
     {
         $currentTime = Carbon::now('America/New_York')->format('g:i:s A');
         $tasks = task::where('level', auth()->user()->level)->get();
-        return view('LandingPage.user.task', compact('tasks','currentTime'));
+        return view('LandingPage.user.task', compact('tasks', 'currentTime'));
     }
 
     public function levels()
@@ -72,12 +72,18 @@ class UserDashboardController extends Controller
         $imageName = rand(111111, 99999) . '.' . $image->getClientOriginalExtension();
         $image->move(public_path('images/'), $imageName);
 
+        // getting user referal
+
+        $user = User::where('id', auth()->user()->id)->first();
+        $referal = $user->referal;
+
         // save into database
 
         $levelFees = new levelFees();
         $levelFees->user_id = auth()->user()->id;
         $levelFees->level_id = $id;
         $levelFees->user_name = auth()->user()->name;
+        $levelFees->referal = $referal;
         $levelFees->level = $levelName;
         $levelFees->trxId = $validated['trxId'];
         $levelFees->img = $imageName;

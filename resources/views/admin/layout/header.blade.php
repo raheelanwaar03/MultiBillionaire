@@ -127,8 +127,9 @@
                             <span class="nav-text">Level</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('Admin.Level.Requests.From.Users') }}">All Requests</a></li>
+                            <li><a href="{{ route('Admin.Level.Requests.From.Users') }}">Pendings Requests</a></li>
                             <li><a href="{{ route('Admin.Unlock.Users') }}">Unlocked Levels</a></li>
+                            <li><a href="{{ route('Admin.All.Rejected.level') }}">Rejected Level Requests</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
