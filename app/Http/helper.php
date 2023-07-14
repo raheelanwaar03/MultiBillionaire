@@ -127,29 +127,27 @@ function participated()
     return $participated;
 }
 
-function teamProfit()
-{
-    $investment = levelFees::where('status','unlock')->get();
+// function teamProfit()
+// {
+//     $investment = levelFees::where('status','unlock')->get();
 
-    return $investment;
+//     // getting my user
+//     $referal = $investment->referal;
+//     if($referal != 'default')
+//     {
+//         $investment = levelFees::where('referal',$referal)->get();
+//         $totalInvestment = 0;
 
-    // // getting my user
-    // $referal = $investment->referal;
-    // if($referal != 'default')
-    // {
-    //     $investment = levelFees::where('referal',$referal)->get();
-    //     $totalInvestment = 0;
+//         foreach ($investment as $invest)
+//         {
+//             $level = $invest->level;
+//             $levelPrice = level::where('level',$level)->first();
+//             $totalInvestment += $levelPrice->totalProfit;
+//         }
 
-    //     foreach ($investment as $invest)
-    //     {
-    //         $level = $invest->level;
-    //         $levelPrice = level::where('level',$level)->first();
-    //         $totalInvestment += $levelPrice->totalProfit;
-    //     }
+//         $profit = $totalInvestment * 5 /100;
+//         return $profit;
+//     }
 
-    //     $profit = $totalInvestment * 5 /100;
-    //     return $profit;
-    }
-
-}
+// }
 
