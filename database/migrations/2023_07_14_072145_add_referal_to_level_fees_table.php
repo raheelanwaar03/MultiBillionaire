@@ -22,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('level_fees', function (Blueprint $table) {
-            //
+            $tabel->dropColumn('referal');
         });
     }
 };
