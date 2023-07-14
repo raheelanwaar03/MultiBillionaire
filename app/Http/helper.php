@@ -129,11 +129,9 @@ function participated()
 
 function teamProfit()
 {
-    // $investment = levelFees::where('status','unlock')->get();
+    $investment = levelFees::where('status','unlock')->get();
 
-    $new = 0;
-
-    return $new;
+    return $investment;
 
     // // getting my user
     // $referal = $investment->referal;
