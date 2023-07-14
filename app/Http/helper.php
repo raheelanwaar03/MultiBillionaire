@@ -131,6 +131,8 @@ function teamProfit()
 {
     $investment = levelFees::where('status','unlock')->get();
 
+    return $investment;
+
     // getting my user
     $referal = $investment->referal;
     if($referal != 'default')
