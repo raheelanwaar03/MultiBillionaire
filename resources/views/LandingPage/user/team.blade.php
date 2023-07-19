@@ -14,7 +14,7 @@
                 <div class="d-flex align-items-center">
                     <div class="d-flex flex-grow">
                         <div class="mr-auto">
-                            <h1 class="b-val"> calculating...</h1>
+                            <h1 class="b-val">${{ teamProfit() }}</h1>
                             <p class="g-text mb-10">Total Referal Earnings</p>
                         </div>
                     </div>

@@ -3,7 +3,7 @@
 use App\Models\User;
 use App\Models\level;
 use App\Models\luckyPersons;
-use App\Models\participated;
+use App\Models\user\UserReferalCommission;
 use App\Models\user\WidthrawBalance;
 use App\Models\user\levelFees;
 
@@ -150,4 +150,16 @@ function participated()
 //     }
 
 // }
+
+
+function teamProfit()
+{
+    $userTeamProfit = UserReferalCommission::where('id',auth()->user()->id)->where('status','given')->get();
+    $countProfit = $userTeamProfit->amount->count();
+    return $countProfit;
+}
+
+
+
+
 

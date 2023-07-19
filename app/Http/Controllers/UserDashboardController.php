@@ -195,7 +195,7 @@ class UserDashboardController extends Controller
         $luckyPerson->email = auth()->user()->email;
         $luckyPerson->luck_id = $id;
         $luckyPerson->trx_id = $validated['trx_id'];
-        $luckyPerson->image = $image_name;
+        $luckyPerson->image = $imageName;
         $luckyPerson->save();
 
         return redirect()->back()->with('success', 'You have been participated in this campaign successfully!');

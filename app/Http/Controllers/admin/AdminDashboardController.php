@@ -79,7 +79,7 @@ class AdminDashboardController extends Controller
 
             $user_id = $lel->user_id;
             $user = User::where('id', $user_id)->where('status', 'approved')->first();
-            $user->balance = $dailyProfit;
+            $user->balance += $dailyProfit;
             $user->save();
         }
 

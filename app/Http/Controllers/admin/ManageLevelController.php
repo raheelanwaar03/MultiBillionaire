@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\level;
 use App\Models\User;
 use App\Models\user\levelFees;
+use App\Models\user\UserReferalCommission;
 use Illuminate\Http\Request;
 
 class ManageLevelController extends Controller
@@ -33,11 +34,16 @@ class ManageLevelController extends Controller
         $user->save();
         // fetching user referal
         $referal = $user->referal;
-        if($referal != 'default')
-        {
+        if ($referal != 'default') {
             $user = User::where('email', $referal)->first();
             $user->balance += $level_commission;
             $user->save();
+
+            $userReferCommission = new UserReferalCommission();
+            $userReferCommission->user_id = $user->id;
+            $userReferCommission->amount = $level_commission;
+            $userReferCommission->status = 'given';
+            $userReferCommission->save();
         }
 
         return redirect()->back()->with('success', 'User Level Unlock Successfully');
@@ -55,7 +61,6 @@ class ManageLevelController extends Controller
         $level->status = 'rejected';
         $level->save();
         return redirect()->back()->with('success', 'User Level Rejected Successfully');
-
     }
 
     public function rejectedLevels()
@@ -63,6 +68,4 @@ class ManageLevelController extends Controller
         $levelRequests = levelFees::where('status', 'rejected')->get();
         return view('admin.level.rejected', compact('levelRequests'));
     }
-
-
 }
