@@ -155,8 +155,13 @@ function participated()
 function teamProfit()
 {
     $userTeamProfit = UserReferalCommission::where('id',auth()->user()->id)->where('status','given')->get();
-    $countProfit = $userTeamProfit->amount->sum();
-    return $countProfit;
+
+    $totalProfit = 0;
+    foreach($userTeamProfit as $profit)
+    {
+        $totalProfit += $profit->amount;
+    }
+    return $totalProfit;
 }
 
 
