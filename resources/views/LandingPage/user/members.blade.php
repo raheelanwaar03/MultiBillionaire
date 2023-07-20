@@ -38,6 +38,7 @@
                                     <small class="text-muted">{{ $user->created_at }}</small>
                                 </div>
                             </div>
+                            <p>{{ $user->level ?? 'level 0' }}</p>
                             <div>
                                 <small class="d-block mb-0 txt-green">{{ $user->status }}</small>
                             </div>
